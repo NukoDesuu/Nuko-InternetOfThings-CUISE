@@ -1,0 +1,17 @@
+18:14:17 **** Incremental Build of configuration Debug for project Lab2_SimpleIO_SerialCommUART ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Lab2_SimpleIO_SerialCommUART.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Lab2_SimpleIO_SerialCommUART\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab2_SimpleIO_SerialCommUART.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab2_SimpleIO_SerialCommUART.elf
+ 
+arm-none-eabi-size  Lab2_SimpleIO_SerialCommUART.elf 
+arm-none-eabi-objdump -h -S Lab2_SimpleIO_SerialCommUART.elf  > "Lab2_SimpleIO_SerialCommUART.list"
+   text	   data	    bss	    dec	    hex	filename
+   7948	     12	   1644	   9604	   2584	Lab2_SimpleIO_SerialCommUART.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab2_SimpleIO_SerialCommUART.list
+ 
+
+18:14:18 Build Finished. 0 errors, 0 warnings. (took 385ms)
+

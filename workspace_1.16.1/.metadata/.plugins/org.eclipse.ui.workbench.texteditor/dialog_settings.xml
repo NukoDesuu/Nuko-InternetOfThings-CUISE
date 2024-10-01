@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value=""/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="rand"/>
+			<item value="UART_PRINT"/>
+			<item value="UART_PrintData"/>
+			<item value="HAL_SPI_RxCpltCallback"/>
+			<item value=".Rank"/>
+			<item value="while"/>
+			<item value="while(1)"/>
+			<item value="MX_ADC1_Init"/>
+			<item value="SystemClock_Config"/>
+			<item value="Adc_Read_Raw_Data"/>
+			<item value="while(1"/>
+			<item value="hadc1"/>
+			<item value="hadc2"/>
+			<item value="HAL_ADC_PollForConversion"/>
+			<item value="ContinuousConvMode "/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="2142"/>
+		<item key="DIALOG_Y_ORIGIN" value="812"/>
+		<item key="DIALOG_WIDTH" value="414"/>
+		<item key="DIALOG_HEIGHT" value="454"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+</section>

@@ -1,0 +1,8 @@
+../Core/Src/main.c:71:5:main	3
+../Core/Src/main.c:135:6:ADC_Select_CH0	2
+../Core/Src/main.c:149:6:ADC_Select_CH1	2
+../Core/Src/main.c:167:6:SystemClock_Config	3
+../Core/Src/main.c:214:13:MX_ADC1_Init	3
+../Core/Src/main.c:266:13:MX_USART2_UART_Init	2
+../Core/Src/main.c:299:13:MX_GPIO_Init	1
+../Core/Src/main.c:347:6:Error_Handler	1

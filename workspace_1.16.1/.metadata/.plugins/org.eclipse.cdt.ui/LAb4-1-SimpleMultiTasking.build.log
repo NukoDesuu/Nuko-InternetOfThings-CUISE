@@ -1,0 +1,10 @@
+18:46:08 **** Incremental Build of configuration Debug for project LAb4-1-SimpleMultiTasking ****
+make -j32 all 
+arm-none-eabi-size  LAb4-1-SimpleMultiTasking.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21764	     16	  20496	  42276	   a524	LAb4-1-SimpleMultiTasking.elf
+Finished building: default.size.stdout
+ 
+
+18:46:09 Build Finished. 0 errors, 0 warnings. (took 187ms)
+

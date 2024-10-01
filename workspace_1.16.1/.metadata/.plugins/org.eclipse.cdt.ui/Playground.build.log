@@ -1,0 +1,10 @@
+19:56:46 **** Incremental Build of configuration Debug for project Playground ****
+make -j32 all 
+arm-none-eabi-size  Playground.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7860	     12	   1644	   9516	   252c	Playground.elf
+Finished building: default.size.stdout
+ 
+
+19:56:46 Build Finished. 0 errors, 0 warnings. (took 133ms)
+

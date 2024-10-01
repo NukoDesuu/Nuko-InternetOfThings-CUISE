@@ -1,0 +1,10 @@
+00:25:07 **** Incremental Build of configuration Debug for project Lab3_PotentiometerJoystick ****
+make -j32 all 
+arm-none-eabi-size  Lab3_PotentiometerJoystick.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14716	     92	   2220	  17028	   4284	Lab3_PotentiometerJoystick.elf
+Finished building: default.size.stdout
+ 
+
+00:25:08 Build Finished. 0 errors, 0 warnings. (took 139ms)
+
