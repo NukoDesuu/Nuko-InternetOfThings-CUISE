@@ -74,7 +74,6 @@ static void MX_TIM3_Init(void);
 static void MX_TIM2_Init(void);
 /* USER CODE BEGIN PFP */
 static uint16_t getUltraSonicDistance();
-static void driveCar(int powerL, int powerR, int direction);
 static void Tone(uint32_t Frequency, uint32_t Duration);
 static void noTone();
 /* USER CODE END PFP */
@@ -171,7 +170,7 @@ int main(void)
   // Initialization for WHEEL MOTORS
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1); //For LEFT PWM
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2); //For RIGHT PWM
-  driveCar(100, 100, 1);
+  driveCar()
   // Initialization for ULTRASONIC SENSOR
   HAL_TIM_Base_Start(&htim1);
   HAL_GPIO_WritePin(TRIG_PORT, TRIG_PIN, GPIO_PIN_RESET); //pulls TRIG pin to LOW

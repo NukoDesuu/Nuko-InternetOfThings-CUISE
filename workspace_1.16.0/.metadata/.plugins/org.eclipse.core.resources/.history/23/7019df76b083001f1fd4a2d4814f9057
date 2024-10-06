@@ -74,7 +74,6 @@ static void MX_TIM3_Init(void);
 static void MX_TIM2_Init(void);
 /* USER CODE BEGIN PFP */
 static uint16_t getUltraSonicDistance();
-static void driveCar(int powerL, int powerR, int direction);
 static void Tone(uint32_t Frequency, uint32_t Duration);
 static void noTone();
 /* USER CODE END PFP */
@@ -100,25 +99,6 @@ static uint16_t getUltraSonicDistance() {
 	Distance = (Value2-Value1)* 0.034/2;
 
 	return Distance;
-}
-
-static void driveCar(int powerL, int powerR, int direction) {
-	//Change the DIRECTION of the car
-	switch (direction) {
-	case 0: //Reverse direction
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, GPIO_PIN_RESET); //LEFT pair REVERSE off
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_1, GPIO_PIN_SET); //LEFT pair FORWARD on
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2, GPIO_PIN_RESET); //RIGHT pair reverse off
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_SET); //RIGHT pair forward on
-	case 1: //Forward direction
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, GPIO_PIN_SET); //LEFT pair REVERSE off
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_1, GPIO_PIN_RESET); //LEFT pair FORWARD on
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2, GPIO_PIN_SET); //RIGHT pair reverse off
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_RESET); //RIGHT pair forward on
-	}
-	//Change the POWER OUTPUT of the car
-	TIM3->CCR1 = 4095 * (powerL/100); //Duty time output per 100% power for LEFT pair
-	TIM3->CCR2 = 4095 * (powerR/100); //Duty time output per 100% power for RIGHT pair
 }
 
 static void Tone(uint32_t Frequency, uint32_t Duration) {
@@ -171,7 +151,12 @@ int main(void)
   // Initialization for WHEEL MOTORS
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1); //For LEFT PWM
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2); //For RIGHT PWM
-  driveCar(100, 100, 1);
+  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, GPIO_PIN_RESET); //LEFT pair REVERSE off
+  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_1, GPIO_PIN_SET); //LEFT pair FORWARD on
+  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2, GPIO_PIN_RESET); //RIGHT pair reverse off
+  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_SET); //RIGHT pair forward on
+  TIM3->CCR1 = 4095; //Setting 100% for LEFT pair
+  TIM3->CCR2 = 4095; //Setting 100% for RIGHT pair
   // Initialization for ULTRASONIC SENSOR
   HAL_TIM_Base_Start(&htim1);
   HAL_GPIO_WritePin(TRIG_PORT, TRIG_PIN, GPIO_PIN_RESET); //pulls TRIG pin to LOW
