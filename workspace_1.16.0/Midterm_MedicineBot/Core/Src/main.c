@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "cmsis_os.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -46,11 +47,14 @@ TIM_HandleTypeDef htim3;
 
 UART_HandleTypeDef huart2;
 
+/* Definitions for defaultTask */
+osThreadId_t defaultTaskHandle;
+const osThreadAttr_t defaultTask_attributes = {
+  .name = "defaultTask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
 /* USER CODE BEGIN PV */
-//For BUZZER melody
-uint32_t OctaveFourCMajor[8] = {262, 294, 330, 349, 392, 440, 493, 523};
-uint32_t OctaveFourCSharpMajor[8] = {277, 311, 349, 370, 415, 466, 523, 554};
-uint8_t NoteIndex = 0;
 // For ULTRASONIC SENSOR measurements
 #define TRIG_PIN GPIO_PIN_9
 #define TRIG_PORT GPIOA
@@ -61,27 +65,21 @@ uint32_t Value1 = 0;
 uint32_t Value2 = 0;
 uint16_t Distance  = 0;  // cm; //in a unit of cm
 uint16_t currentDistance = 0;
-// For SERIAL OUTPUT
-char msg[256];
-/* USER CODE END PV */
+uint16_t distanceLimit = 10; //in a unit of cm
+// For LINE TRACKING sensor
+int l1, l2, l3, l4, l5;
+// For BUZZER melody
+uint32_t OctaveFourCMajor[8] = {262, 294, 330, 349, 392, 440, 493, 523};
+uint32_t OctaveFourCSharpMajor[8] = {277, 311, 349, 370, 415, 466, 523, 554};
+uint8_t NoteIndex = 0;
+// MULTITASKING handles
+osThreadId_t measureDistanceHandle;
+osThreadId_t detectLineHandle;
+osThreadId_t buzzerMelodyHandle;
 
-/* Private function prototypes -----------------------------------------------*/
-void SystemClock_Config(void);
-static void MX_GPIO_Init(void);
-static void MX_USART2_UART_Init(void);
-static void MX_TIM1_Init(void);
-static void MX_TIM3_Init(void);
-static void MX_TIM2_Init(void);
-/* USER CODE BEGIN PFP */
-static uint16_t getUltraSonicDistance();
-static void driveCar(int powerL, int powerR, int direction);
-static void Tone(uint32_t Frequency, uint32_t Duration);
-static void noTone();
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-static uint16_t getUltraSonicDistance() {
+static void measureDistance() {
+	// This function keeps running all the time
+	while (1) {
 	HAL_GPIO_WritePin(TRIG_PORT, TRIG_PIN, GPIO_PIN_SET);  // pull the TRIG pin HIGH
 	__HAL_TIM_SET_COUNTER(&htim1, 0);
 	while (__HAL_TIM_GET_COUNTER (&htim1) < 10);  // wait for 10 us
@@ -98,38 +96,84 @@ static uint16_t getUltraSonicDistance() {
 	Value2 = __HAL_TIM_GET_COUNTER (&htim1);
 
 	Distance = (Value2-Value1)* 0.034/2;
-
-	return Distance;
-}
-
-static void driveCar(int powerL, int powerR, int direction) {
-	//Change the DIRECTION of the car
-	switch (direction) {
-	case 0: //Reverse direction
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, GPIO_PIN_RESET); //LEFT pair REVERSE off
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_1, GPIO_PIN_SET); //LEFT pair FORWARD on
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2, GPIO_PIN_RESET); //RIGHT pair reverse off
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_SET); //RIGHT pair forward on
-	case 1: //Forward direction
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, GPIO_PIN_SET); //LEFT pair REVERSE off
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_1, GPIO_PIN_RESET); //LEFT pair FORWARD on
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2, GPIO_PIN_SET); //RIGHT pair reverse off
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_RESET); //RIGHT pair forward on
+	osDelay(10);
 	}
-	//Change the POWER OUTPUT of the car
-	TIM3->CCR1 = 4095 * (powerL/100); //Duty time output per 100% power for LEFT pair
-	TIM3->CCR2 = 4095 * (powerR/100); //Duty time output per 100% power for RIGHT pair
 }
 
-static void Tone(uint32_t Frequency, uint32_t Duration) {
+static void detectLine() {
+	// This function keeps running all the time
+	while (1) {
+		l1 = HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_6);
+		l2 = HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_7);
+		l3 = HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_8);
+		l4 = HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_9);
+		l5 = HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_10);
+		osDelay(5);
+	}
+}
+
+static void Tone(uint32_t Frequency, uint32_t Duration, int Volume) {
 	TIM2->ARR = (1000000UL / Frequency) - 1; //Setting the PWM Frequency
-	TIM2->CCR1 = (TIM2->ARR >> 1); //Setting duty cycle to 50% (volume depending on frequency)
+	TIM2->CCR1 = (TIM2->ARR / 2 * Volume / 100); //Setting duty cycle to 50% (volume depending on frequency)
 	HAL_Delay(Duration);
 }
 
 static void noTone() {
 	TIM2->CCR1 = 0; //Mute by setting duty cycle 0%
 }
+
+static void buzzerMelody() {
+	while (1) {
+		Tone(OctaveFourCMajor[NoteIndex++], 300, 60);
+		if (NoteIndex == 8) {
+		  NoteIndex = 0;
+		  noTone();
+		  osDelay(3000);
+		}
+	}
+}
+// For SERIAL OUTPUT
+char msg[256];
+/* USER CODE END PV */
+
+/* Private function prototypes -----------------------------------------------*/
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+static void MX_USART2_UART_Init(void);
+static void MX_TIM1_Init(void);
+static void MX_TIM3_Init(void);
+static void MX_TIM2_Init(void);
+void StartDefaultTask(void *argument);
+
+/* USER CODE BEGIN PFP */
+static void driveCar(float powerL, float powerR, int direction);
+static void Tone(uint32_t Frequency, uint32_t Duration, int Volume);
+static void noTone();
+static void detectLine();
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+static void driveCar(float powerL, float powerR, int direction) {
+	//Change the DIRECTION of the car
+	switch (direction) {
+	case 0: //Reverse direction
+		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, GPIO_PIN_RESET); //LEFT pair REVERSE off
+		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_1, GPIO_PIN_SET); //LEFT pair FORWARD on
+		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2, GPIO_PIN_SET); //RIGHT pair reverse off
+		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_RESET); //RIGHT pair forward on
+	case 1: //Forward direction
+		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, GPIO_PIN_SET); //LEFT pair REVERSE off
+		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_1, GPIO_PIN_RESET); //LEFT pair FORWARD on
+		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2, GPIO_PIN_RESET); //RIGHT pair reverse off
+		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_SET); //RIGHT pair forward on
+	}
+	//Change the POWER OUTPUT of the car
+	TIM3->CCR1 = 4095 * (powerL/100); //Duty time output per 100% power for LEFT pair
+	TIM3->CCR2 = 4095 * (powerR/100); //Duty time output per 100% power for RIGHT pair
+}
+
+
 /* USER CODE END 0 */
 
 /**
@@ -171,27 +215,80 @@ int main(void)
   // Initialization for WHEEL MOTORS
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1); //For LEFT PWM
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2); //For RIGHT PWM
-  driveCar(100, 100, 1);
+  driveCar(80, 80, 1);
   // Initialization for ULTRASONIC SENSOR
   HAL_TIM_Base_Start(&htim1);
   HAL_GPIO_WritePin(TRIG_PORT, TRIG_PIN, GPIO_PIN_RESET); //pulls TRIG pin to LOW
   // Variables
   /* USER CODE END 2 */
 
+  /* Init scheduler */
+  osKernelInitialize();
+
+  /* USER CODE BEGIN RTOS_MUTEX */
+  /* add mutexes, ... */
+  /* USER CODE END RTOS_MUTEX */
+
+  /* USER CODE BEGIN RTOS_SEMAPHORES */
+  /* add semaphores, ... */
+  /* USER CODE END RTOS_SEMAPHORES */
+
+  /* USER CODE BEGIN RTOS_TIMERS */
+  /* start timers, add new ones, ... */
+  /* USER CODE END RTOS_TIMERS */
+
+  /* USER CODE BEGIN RTOS_QUEUES */
+  /* add queues, ... */
+  /* USER CODE END RTOS_QUEUES */
+
+  /* Create the thread(s) */
+  /* creation of defaultTask */
+  defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+
+  /* USER CODE BEGIN RTOS_THREADS */
+  /* add threads, ... */
+  const osThreadAttr_t measureDistance_attributes = {
+		  .name = "measureDistance",
+		  .priority = (osPriority_t) osPriorityNormal,
+		  .stack_size = 128
+  };
+
+  const osThreadAttr_t detectLine_attributes = {
+		  .name = "detectLine",
+		  .priority = (osPriority_t) osPriorityNormal,
+		  .stack_size = 128
+  };
+
+  const osThreadAttr_t buzzerMelody_attributes = {
+		  .name = "buzzerMelody",
+		  .priority = (osPriority_t) osPriorityNormal,
+		  .stack_size = 128
+  };
+
+  measureDistanceHandle = osThreadNew(measureDistance, NULL, &measureDistance_attributes);
+  detectLineHandle = osThreadNew(detectLine, NULL, &detectLine_attributes);
+  buzzerMelodyHandle = osThreadNew(buzzerMelody, NULL, &detectLine_attributes);
+  /* USER CODE END RTOS_THREADS */
+
+  /* USER CODE BEGIN RTOS_EVENTS */
+  /* add events, ... */
+  /* USER CODE END RTOS_EVENTS */
+
+  /* Start scheduler */
+  osKernelStart();
+
+  /* We should never get here as control is now taken by the scheduler */
+
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  currentDistance = getUltraSonicDistance();
-	  sprintf(msg, "Distance: %d cm\r\n", currentDistance);
-	  HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
-	  HAL_Delay(50);
-//	  Tone(OctaveFourCSharpMajor[NoteIndex++], 250);
-//	  if(NoteIndex == 8){
-//		  NoteIndex = 0;
-//		  noTone();
-//		  HAL_Delay(3000);
-
+//	  HAL_Delay(50);
+//
+//	  detectLine();
+//	  HAL_Delay(50);
+//	  sprintf(msg, "hello world\r\n");
+//	  HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -509,6 +606,48 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 
 /* USER CODE END 4 */
+
+/* USER CODE BEGIN Header_StartDefaultTask */
+/**
+  * @brief  Function implementing the defaultTask thread.
+  * @param  argument: Not used
+  * @retval None
+  */
+/* USER CODE END Header_StartDefaultTask */
+void StartDefaultTask(void *argument)
+{
+  /* USER CODE BEGIN 5 */
+	driveCar(80, 80, 1);
+  /* Infinite loop */
+  for(;;)
+  {
+	  sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+	  HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+	  osDelay(50);
+  }
+  /* USER CODE END 5 */
+}
+
+/**
+  * @brief  Period elapsed callback in non blocking mode
+  * @note   This function is called  when TIM4 interrupt took place, inside
+  * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
+  * a global variable "uwTick" used as application time base.
+  * @param  htim : TIM handle
+  * @retval None
+  */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  /* USER CODE BEGIN Callback 0 */
+
+  /* USER CODE END Callback 0 */
+  if (htim->Instance == TIM4) {
+    HAL_IncTick();
+  }
+  /* USER CODE BEGIN Callback 1 */
+
+  /* USER CODE END Callback 1 */
+}
 
 /**
   * @brief  This function is executed in case of error occurrence.
