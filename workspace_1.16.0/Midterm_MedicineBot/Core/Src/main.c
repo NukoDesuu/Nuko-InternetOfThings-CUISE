@@ -55,6 +55,7 @@ const osThreadAttr_t defaultTask_attributes = {
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* USER CODE BEGIN PV */
+int status = 0;
 // For ULTRASONIC SENSOR measurements
 #define TRIG_PIN GPIO_PIN_9
 #define TRIG_PORT GPIOA
@@ -71,11 +72,15 @@ int l1, l2, l3, l4, l5;
 // For BUZZER melody
 uint32_t OctaveFourCMajor[8] = {262, 294, 330, 349, 392, 440, 493, 523};
 uint32_t OctaveFourCSharpMajor[8] = {277, 311, 349, 370, 415, 466, 523, 554};
+uint32_t SingleMelody[1] = {415};
+uint32_t WarningMelody[1] = {349};
+uint32_t ExampleMelody[3] = {277, 349, 415};
 uint8_t NoteIndex = 0;
 // MULTITASKING handles
 osThreadId_t measureDistanceHandle;
 osThreadId_t detectLineHandle;
 osThreadId_t buzzerMelodyHandle;
+osThreadId_t blinkLEDHandle;
 
 static void measureDistance() {
 	// This function keeps running all the time
@@ -123,13 +128,29 @@ static void noTone() {
 }
 
 static void buzzerMelody() {
-	while (1) {
-		Tone(OctaveFourCMajor[NoteIndex++], 300, 60);
-		if (NoteIndex == 8) {
-		  NoteIndex = 0;
-		  noTone();
-		  osDelay(3000);
+	if (status == 1) {
+		while (status == 1) {
+			Tone(ExampleMelody[NoteIndex++], 250, 50);
+			if (NoteIndex == 3) {
+			  NoteIndex = 0;
+			  noTone();
+			  osDelay(2000);
+			}
 		}
+	}
+	else {
+		noTone();
+	}
+}
+
+static void blinkLED() {
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_SET);
+	if (status == 1) {
+		while (status == 1) {
+			HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_13);
+			osDelay(1000);
+		}
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_SET);
 	}
 }
 // For SERIAL OUTPUT
@@ -265,9 +286,16 @@ int main(void)
 		  .stack_size = 128
   };
 
+  const osThreadAttr_t blinkLED_attributes = {
+		  .name = "blinkLED",
+		  .priority = (osPriority_t) osPriorityNormal,
+		  .stack_size = 128
+  };
+
   measureDistanceHandle = osThreadNew(measureDistance, NULL, &measureDistance_attributes);
   detectLineHandle = osThreadNew(detectLine, NULL, &detectLine_attributes);
-  buzzerMelodyHandle = osThreadNew(buzzerMelody, NULL, &detectLine_attributes);
+  buzzerMelodyHandle = osThreadNew(buzzerMelody, NULL, &buzzerMelody_attributes);
+  blinkLEDHandle = osThreadNew(blinkLED, NULL, &blinkLED_attributes);
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */
@@ -565,6 +593,9 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, LD2_Pin|Ultrasonic_Trig_Pin, GPIO_PIN_RESET);
 
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(LED_Module_GPIO_Port, LED_Module_Pin, GPIO_PIN_RESET);
+
   /*Configure GPIO pin : B1_Pin */
   GPIO_InitStruct.Pin = B1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
@@ -584,6 +615,19 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : LED_Module_Pin */
+  GPIO_InitStruct.Pin = LED_Module_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(LED_Module_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : Green_Button_Pin */
+  GPIO_InitStruct.Pin = Green_Button_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(Green_Button_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : LineTracking_OUT1_Pin LineTracking_OUT2_Pin LineTracking_OUT3_Pin LineTracking_OUT4_Pin
                            LineTracking_OUT5_Pin */
@@ -617,12 +661,27 @@ static void MX_GPIO_Init(void)
 void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN 5 */
-	driveCar(80, 80, 1);
+	driveCar(100, 100, 1);
   /* Infinite loop */
   for(;;)
   {
+	  driveCar(100, 100, 1);
 	  sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
 	  HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+	  if (l2 == 0) {
+		  driveCar(100, 0, 1);
+	  }
+	  if (l4 == 0) {
+		  driveCar(0, 100, 1);
+	  }
+	  if ((l1 == 0 && l2 == 0 && l3 == 0 && l4 == 0 && l5 == 0) || Distance < 20) {
+		  status = 1;
+		  while ((l1 == 0 && l2 == 0 && l3 == 0 && l4 == 0 && l5 == 0 ) || Distance < 20) {
+			  driveCar(0, 0, 1);
+		  }
+		  status = 0;
+		  osDelay(1000);
+	  }
 	  osDelay(50);
   }
   /* USER CODE END 5 */

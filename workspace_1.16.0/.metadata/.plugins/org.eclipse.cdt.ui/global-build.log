@@ -4186,3 +4186,1896 @@ Finished building: default.size.stdout
  
 Finished building: Midterm_MedicineBot.list
  
+19:53:04 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:261:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  261 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:639:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  639 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:639:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  639 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:639:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:640:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  640 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:640:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  640 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:640:53: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:122:13: warning: 'noTone' defined but not used [-Wunused-function]
+  122 | static void noTone() {
+      |             ^~~~~~
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31068	    128	  21344	  52540	   cd3c	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+19:53:46 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:262:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  262 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:640:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  640 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:640:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  640 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:640:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:641:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  641 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:641:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  641 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:641:53: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:122:13: warning: 'noTone' defined but not used [-Wunused-function]
+  122 | static void noTone() {
+      |             ^~~~~~
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31084	    128	  21344	  52556	   cd4c	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+19:54:25 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:262:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  262 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:640:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  640 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:640:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  640 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:640:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:641:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  641 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:641:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  641 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:641:53: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:122:13: warning: 'noTone' defined but not used [-Wunused-function]
+  122 | static void noTone() {
+      |             ^~~~~~
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31084	    128	  21344	  52556	   cd4c	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+19:54:51 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:263:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  263 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:641:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:641:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:641:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:642:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:642:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:642:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31116	    128	  21344	  52588	   cd6c	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+19:55:13 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'buzzerMelody':
+../Core/Src/main.c:128:22: error: 'RepeatingMelody' undeclared (first use in this function); did you mean 'RepeatMelody'?
+  128 |                 Tone(RepeatingMelody[NoteIndex++], 500, 60);
+      |                      ^~~~~~~~~~~~~~~
+      |                      RepeatMelody
+../Core/Src/main.c:128:22: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:263:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  263 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:641:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:641:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:641:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:642:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:642:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:642:53: note: include '<string.h>' or provide a declaration of 'strlen'
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+19:55:26 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:263:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  263 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:641:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:641:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:641:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:642:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:642:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:642:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31116	    104	  21344	  52564	   cd54	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+19:56:01 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:263:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  263 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:641:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:641:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:641:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:642:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:642:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:642:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31116	    108	  21340	  52564	   cd54	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+19:56:24 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:263:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  263 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:641:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:641:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:641:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:642:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:642:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:642:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31116	    108	  21340	  52564	   cd54	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+19:56:43 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:263:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  263 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:641:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:641:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:641:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:642:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:642:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:642:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31116	    108	  21340	  52564	   cd54	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+19:57:10 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:263:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  263 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:641:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:641:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:641:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:642:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:642:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:642:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31116	    108	  21340	  52564	   cd54	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+19:57:39 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:263:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  263 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:641:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:641:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:641:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:642:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:642:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:642:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31116	    108	  21340	  52564	   cd54	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+19:58:08 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:261:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  261 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:639:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  639 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:639:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  639 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:639:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:640:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  640 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:640:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  640 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:640:53: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:122:13: warning: 'noTone' defined but not used [-Wunused-function]
+  122 | static void noTone() {
+      |             ^~~~~~
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31068	    108	  21340	  52516	   cd24	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+19:58:35 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:263:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  263 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:641:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:641:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:641:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:642:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:642:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:642:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31116	    108	  21340	  52564	   cd54	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+19:59:37 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:263:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  263 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:641:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:641:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:641:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:642:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:642:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:642:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31116	    100	  21340	  52556	   cd4c	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:00:00 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:263:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  263 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:641:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:641:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:641:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:642:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:642:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:642:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31116	    100	  21340	  52556	   cd4c	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:00:14 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:263:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  263 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:641:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:641:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:641:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:642:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:642:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:642:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31116	    100	  21340	  52556	   cd4c	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:00:37 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:263:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  263 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:641:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:641:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:641:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:642:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:642:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:642:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31116	    100	  21340	  52556	   cd4c	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:00:55 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:263:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  263 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:641:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:641:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  641 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:641:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:642:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:642:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  642 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:642:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31116	    100	  21340	  52556	   cd4c	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:01:44 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:264:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  264 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:642:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  642 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:642:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  642 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:642:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:643:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  643 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:643:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  643 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:643:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31116	    100	  21340	  52556	   cd4c	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:05:16 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:265:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  265 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:643:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  643 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:643:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  643 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:643:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:644:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  644 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:644:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  644 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:644:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31116	    212	  21340	  52668	   cdbc	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:05:43 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:265:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  265 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:643:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  643 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:643:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  643 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:643:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:644:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  644 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:644:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  644 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:644:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31116	    212	  21340	  52668	   cdbc	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:06:24 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:265:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  265 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:643:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  643 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:643:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  643 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:643:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:644:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  644 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:644:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  644 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:644:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31116	    212	  21340	  52668	   cdbc	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:06:58 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:265:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  265 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:643:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  643 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:643:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  643 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:643:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:644:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  644 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:644:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  644 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:644:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31116	    212	  21340	  52668	   cdbc	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:07:44 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:265:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  265 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:643:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  643 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:643:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  643 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:643:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:644:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  644 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:644:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  644 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:644:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31116	    196	  21340	  52652	   cdac	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:08:05 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:265:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  265 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:643:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  643 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:643:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  643 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:643:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:644:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  644 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:644:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  644 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:644:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31116	    196	  21340	  52652	   cdac	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:09:18 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:265:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  265 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:643:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  643 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:643:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  643 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:643:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:644:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  644 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:644:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  644 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:644:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31116	    108	  21340	  52564	   cd54	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:10:12 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:265:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  265 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:643:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  643 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:643:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  643 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:643:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:644:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  644 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:644:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  644 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:644:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31116	    108	  21340	  52564	   cd54	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:11:39 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:265:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  265 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:643:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  643 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:643:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  643 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:643:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:644:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  644 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:644:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  644 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:644:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31116	    108	  21340	  52564	   cd54	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:13:40 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:265:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  265 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:644:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  644 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:644:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  644 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:644:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:645:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  645 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:645:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  645 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:645:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31132	    108	  21340	  52580	   cd64	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:16:17 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:274:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  274 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:652:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  652 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:652:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  652 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:652:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:653:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  653 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:653:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  653 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:653:53: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:140:13: warning: 'blinkLED' defined but not used [-Wunused-function]
+  140 | static void blinkLED() {
+      |             ^~~~~~~~
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31116	    108	  21340	  52564	   cd54	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:18:51 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:289:20: warning: implicit declaration of function 'osThreadNEw'; did you mean 'osThreadNew'? [-Wimplicit-function-declaration]
+  289 |   blinkLEDHandle = osThreadNEw(blinkLED, NULL, &blinkLED_attributes);
+      |                    ^~~~~~~~~~~
+      |                    osThreadNew
+../Core/Src/main.c:289:18: warning: assignment to 'osThreadId_t' {aka 'void *'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
+  289 |   blinkLEDHandle = osThreadNEw(blinkLED, NULL, &blinkLED_attributes);
+      |                  ^
+../Core/Src/main.c:274:24: warning: unused variable 'buzzerMelody_attributes' [-Wunused-variable]
+  274 |   const osThreadAttr_t buzzerMelody_attributes = {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:659:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  659 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:659:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  659 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:659:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:660:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  660 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:660:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  660 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:660:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/Nuko/Programs/STM IDE/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `main':
+C:/Users/Nuko/STM32CubeIDE/workspace_1.16.0/Midterm_MedicineBot/Debug/../Core/Src/main.c:289: undefined reference to `osThreadNEw'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:68: Midterm_MedicineBot.elf] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+20:19:23 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:659:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  659 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:659:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  659 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:659:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:660:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  660 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:660:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  660 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:660:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31320	    108	  21348	  52776	   ce28	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:20:07 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:659:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  659 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:659:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  659 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:659:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:660:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  660 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:660:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  660 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:660:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31320	    108	  21348	  52776	   ce28	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:21:15 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:76:40: error: expected '}' before numeric constant
+   76 | uint32_t ExampleMelody[3] = {415, 349. 277};
+      |                             ~          ^~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:659:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  659 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:659:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  659 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:659:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:660:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  660 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:660:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  660 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:660:53: note: include '<string.h>' or provide a declaration of 'strlen'
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+20:21:23 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:659:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  659 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:659:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  659 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:659:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:660:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  660 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:660:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  660 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:660:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31320	    108	  21348	  52776	   ce28	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:21:50 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:659:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  659 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:659:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  659 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:659:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:660:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  660 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:660:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  660 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:660:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31320	    108	  21348	  52776	   ce28	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:22:11 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:659:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  659 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:659:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  659 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:659:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:660:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  660 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:660:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  660 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:660:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31320	    108	  21348	  52776	   ce28	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:22:30 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:659:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  659 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:659:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  659 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:659:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:660:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  660 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:660:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  660 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:660:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31320	    108	  21348	  52776	   ce28	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:22:47 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:659:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  659 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:659:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  659 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:659:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:660:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  660 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:660:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  660 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:660:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31320	    108	  21348	  52776	   ce28	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:36:13 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:659:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  659 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:659:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  659 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:659:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:660:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  660 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:660:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  660 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:660:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31368	    108	  21348	  52824	   ce58	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:37:11 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:660:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  660 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:660:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  660 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:660:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:661:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  661 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:661:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  661 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:661:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31384	    108	  21348	  52840	   ce68	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:37:53 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:660:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  660 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:660:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  660 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:660:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:661:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  661 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:661:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  661 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:661:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31368	    108	  21348	  52824	   ce58	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:46:54 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:660:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  660 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:660:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  660 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:660:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:661:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  661 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:661:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  661 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:661:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31432	    108	  21348	  52888	   ce98	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:48:52 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:660:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  660 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:660:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  660 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:660:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:661:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  661 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:661:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  661 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:661:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31448	    108	  21348	  52904	   cea8	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:55:40 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:670:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  670 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:670:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  670 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:670:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:671:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  671 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:671:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  671 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:671:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31512	    108	  21348	  52968	   cee8	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:58:05 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:670:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  670 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:670:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  670 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:670:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:671:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  671 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:671:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  671 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:671:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31576	    108	  21348	  53032	   cf28	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+20:58:57 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31576	    108	  21348	  53032	   cf28	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+21:01:34 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:669:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  669 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:669:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  669 |           sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+      |           ^~~~~~~
+../Core/Src/main.c:669:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:670:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  670 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:670:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  670 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:670:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  31576	    108	  21348	  53032	   cf28	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+21:06:32 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31576	    108	  21348	  53032	   cf28	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 

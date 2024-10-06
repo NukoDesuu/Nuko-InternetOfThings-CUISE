@@ -81,6 +81,10 @@ void Error_Handler(void);
 #define LeftPair_PWM_GPIO_Port GPIOA
 #define RightPair_PWM_Pin GPIO_PIN_7
 #define RightPair_PWM_GPIO_Port GPIOA
+#define LED_Module_Pin GPIO_PIN_13
+#define LED_Module_GPIO_Port GPIOB
+#define Green_Button_Pin GPIO_PIN_15
+#define Green_Button_GPIO_Port GPIOB
 #define LineTracking_OUT1_Pin GPIO_PIN_6
 #define LineTracking_OUT1_GPIO_Port GPIOC
 #define LineTracking_OUT2_Pin GPIO_PIN_7
