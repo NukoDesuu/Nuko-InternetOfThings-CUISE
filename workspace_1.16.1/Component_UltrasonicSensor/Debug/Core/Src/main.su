@@ -1,0 +1,8 @@
+../Core/Src/main.c:70:10:GetUltrasonicMeasuredDistance	16	static
+../Core/Src/main.c:91:6:LEDTogglePerDistance	16	static
+../Core/Src/main.c:112:5:main	264	static
+../Core/Src/main.c:165:6:SystemClock_Config	88	static
+../Core/Src/main.c:212:13:MX_TIM1_Init	32	static
+../Core/Src/main.c:258:13:MX_USART2_UART_Init	8	static
+../Core/Src/main.c:291:13:MX_GPIO_Init	48	static
+../Core/Src/main.c:347:6:Error_Handler	4	static,ignoring_inline_asm

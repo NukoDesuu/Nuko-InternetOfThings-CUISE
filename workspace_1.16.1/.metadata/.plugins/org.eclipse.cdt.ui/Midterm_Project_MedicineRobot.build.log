@@ -1,0 +1,10 @@
+20:56:22 **** Incremental Build of configuration Debug for project Midterm_Project_MedicineRobot ****
+make -j32 all 
+arm-none-eabi-size  Midterm_Project_MedicineRobot.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11984	     12	   1788	  13784	   35d8	Midterm_Project_MedicineRobot.elf
+Finished building: default.size.stdout
+ 
+
+20:56:22 Build Finished. 0 errors, 0 warnings. (took 142ms)
+

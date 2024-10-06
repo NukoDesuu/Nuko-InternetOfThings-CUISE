@@ -1,0 +1,739 @@
+12:55:46 **** Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f411retx.d" -MT"Core/Startup/startup_stm32f411retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32f411retx.o" "../Core/Startup/startup_stm32f411retx.s"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:142:11: warning: implicit declaration of function '_HAL_TIM_SET_COUNTER' [-Wimplicit-function-declaration]
+  142 |           _HAL_TIM_SET_COUNTER()
+      |           ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:142:33: error: expected ';' before '}' token
+  142 |           _HAL_TIM_SET_COUNTER()
+      |                                 ^
+      |                                 ;
+......
+  149 |           }
+      |           ~                      
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:155:1: error: expected identifier or '(' before '}' token
+  155 | }
+      | ^
+../Core/Src/main.c:81:13: warning: 'noTone' defined but not used [-Wunused-function]
+   81 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:75:13: warning: 'Tone' defined but not used [-Wunused-function]
+   75 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+12:55:53 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:142:11: warning: implicit declaration of function '_HAL_TIM_SET_COUNTER' [-Wimplicit-function-declaration]
+  142 |           _HAL_TIM_SET_COUNTER()
+      |           ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:142:33: error: expected ';' before '}' token
+  142 |           _HAL_TIM_SET_COUNTER()
+      |                                 ^
+      |                                 ;
+......
+  149 |           }
+      |           ~                      
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:155:1: error: expected identifier or '(' before '}' token
+  155 | }
+      | ^
+../Core/Src/main.c:81:13: warning: 'noTone' defined but not used [-Wunused-function]
+   81 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:75:13: warning: 'Tone' defined but not used [-Wunused-function]
+   75 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+12:56:04 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:142:11: warning: implicit declaration of function '_HAL_TIM_SET_COUNTER' [-Wimplicit-function-declaration]
+  142 |           _HAL_TIM_SET_COUNTER()
+      |           ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:142:33: error: expected ';' before '}' token
+  142 |           _HAL_TIM_SET_COUNTER()
+      |                                 ^
+      |                                 ;
+......
+  149 |           }
+      |           ~                      
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:155:1: error: expected identifier or '(' before '}' token
+  155 | }
+      | ^
+../Core/Src/main.c:81:13: warning: 'noTone' defined but not used [-Wunused-function]
+   81 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:75:13: warning: 'Tone' defined but not used [-Wunused-function]
+   75 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+12:57:23 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:142:11: warning: implicit declaration of function '_HAL_TIM_SET_COUNTER' [-Wimplicit-function-declaration]
+  142 |           _HAL_TIM_SET_COUNTER()
+      |           ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:142:33: error: expected ';' before '}' token
+  142 |           _HAL_TIM_SET_COUNTER()
+      |                                 ^
+      |                                 ;
+......
+  149 |           }
+      |           ~                      
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:155:1: error: expected identifier or '(' before '}' token
+  155 | }
+      | ^
+../Core/Src/main.c:81:13: warning: 'noTone' defined but not used [-Wunused-function]
+   81 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:75:13: warning: 'Tone' defined but not used [-Wunused-function]
+   75 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+12:57:24 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:142:11: warning: implicit declaration of function '_HAL_TIM_SET_COUNTER' [-Wimplicit-function-declaration]
+  142 |           _HAL_TIM_SET_COUNTER()
+      |           ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:142:33: error: expected ';' before '}' token
+  142 |           _HAL_TIM_SET_COUNTER()
+      |                                 ^
+      |                                 ;
+......
+  149 |           }
+      |           ~                      
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:155:1: error: expected identifier or '(' before '}' token
+  155 | }
+      | ^
+../Core/Src/main.c:81:13: warning: 'noTone' defined but not used [-Wunused-function]
+   81 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:75:13: warning: 'Tone' defined but not used [-Wunused-function]
+   75 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+12:58:25 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:142:11: warning: implicit declaration of function '_HAL_TIM_SET_COUNTER' [-Wimplicit-function-declaration]
+  142 |           _HAL_TIM_SET_COUNTER()
+      |           ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:142:33: error: expected ';' before '}' token
+  142 |           _HAL_TIM_SET_COUNTER()
+      |                                 ^
+      |                                 ;
+......
+  149 |           }
+      |           ~                      
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:155:1: error: expected identifier or '(' before '}' token
+  155 | }
+      | ^
+../Core/Src/main.c:81:13: warning: 'noTone' defined but not used [-Wunused-function]
+   81 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:75:13: warning: 'Tone' defined but not used [-Wunused-function]
+   75 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+12:59:21 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:142:11: warning: implicit declaration of function '_HAL_TIM_SET_COUNTER' [-Wimplicit-function-declaration]
+  142 |           _HAL_TIM_SET_COUNTER()
+      |           ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:142:33: error: expected ';' before '}' token
+  142 |           _HAL_TIM_SET_COUNTER()
+      |                                 ^
+      |                                 ;
+......
+  149 |           }
+      |           ~                      
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:155:1: error: expected identifier or '(' before '}' token
+  155 | }
+      | ^
+../Core/Src/main.c:81:13: warning: 'noTone' defined but not used [-Wunused-function]
+   81 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:75:13: warning: 'Tone' defined but not used [-Wunused-function]
+   75 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+12:59:23 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:142:11: warning: implicit declaration of function '_HAL_TIM_SET_COUNTER' [-Wimplicit-function-declaration]
+  142 |           _HAL_TIM_SET_COUNTER()
+      |           ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:142:33: error: expected ';' before '}' token
+  142 |           _HAL_TIM_SET_COUNTER()
+      |                                 ^
+      |                                 ;
+......
+  149 |           }
+      |           ~                      
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:155:1: error: expected identifier or '(' before '}' token
+  155 | }
+      | ^
+../Core/Src/main.c:81:13: warning: 'noTone' defined but not used [-Wunused-function]
+   81 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:75:13: warning: 'Tone' defined but not used [-Wunused-function]
+   75 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+13:00:01 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:142:11: warning: implicit declaration of function '_HAL_TIM_SET_COUNTER' [-Wimplicit-function-declaration]
+  142 |           _HAL_TIM_SET_COUNTER()
+      |           ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:142:33: error: expected ';' before '}' token
+  142 |           _HAL_TIM_SET_COUNTER()
+      |                                 ^
+      |                                 ;
+......
+  149 |           }
+      |           ~                      
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:155:1: error: expected identifier or '(' before '}' token
+  155 | }
+      | ^
+../Core/Src/main.c:81:13: warning: 'noTone' defined but not used [-Wunused-function]
+   81 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:75:13: warning: 'Tone' defined but not used [-Wunused-function]
+   75 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+13:00:10 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:142:11: warning: implicit declaration of function '_HAL_TIM_SET_COUNTER' [-Wimplicit-function-declaration]
+  142 |           _HAL_TIM_SET_COUNTER()
+      |           ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:142:33: error: expected ';' before '}' token
+  142 |           _HAL_TIM_SET_COUNTER()
+      |                                 ^
+      |                                 ;
+......
+  149 |           }
+      |           ~                      
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:155:1: error: expected identifier or '(' before '}' token
+  155 | }
+      | ^
+../Core/Src/main.c:81:13: warning: 'noTone' defined but not used [-Wunused-function]
+   81 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:75:13: warning: 'Tone' defined but not used [-Wunused-function]
+   75 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+13:01:22 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:142:11: warning: implicit declaration of function '_HAL_TIM_SET_COUNTER' [-Wimplicit-function-declaration]
+  142 |           _HAL_TIM_SET_COUNTER()
+      |           ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:142:33: error: expected ';' before '}' token
+  142 |           _HAL_TIM_SET_COUNTER()
+      |                                 ^
+      |                                 ;
+......
+  149 |           }
+      |           ~                      
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:155:1: error: expected identifier or '(' before '}' token
+  155 | }
+      | ^
+../Core/Src/main.c:81:13: warning: 'noTone' defined but not used [-Wunused-function]
+   81 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:75:13: warning: 'Tone' defined but not used [-Wunused-function]
+   75 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+13:01:24 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:142:11: warning: implicit declaration of function 'HAL_TIM_SET_COUNTER' [-Wimplicit-function-declaration]
+  142 |           HAL_TIM_SET_COUNTER(&htim3, 0);
+      |           ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:143:18: warning: implicit declaration of function 'HAL_TIM_GET_COUNTER' [-Wimplicit-function-declaration]
+  143 |           while (HAL_TIM_GET_COUNTER (&htim3) < 10);  // wait for 10 us
+      |                  ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:169:1: error: expected identifier or '(' before '}' token
+  169 | }
+      | ^
+../Core/Src/main.c:81:13: warning: 'noTone' defined but not used [-Wunused-function]
+   81 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:75:13: warning: 'Tone' defined but not used [-Wunused-function]
+   75 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+13:01:25 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:142:11: warning: implicit declaration of function 'HAL_TIM_SET_COUNTER' [-Wimplicit-function-declaration]
+  142 |           HAL_TIM_SET_COUNTER(&htim3, 0);
+      |           ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:143:18: warning: implicit declaration of function 'HAL_TIM_GET_COUNTER' [-Wimplicit-function-declaration]
+  143 |           while (HAL_TIM_GET_COUNTER (&htim3) < 10);  // wait for 10 us
+      |                  ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:169:1: error: expected identifier or '(' before '}' token
+  169 | }
+      | ^
+../Core/Src/main.c:81:13: warning: 'noTone' defined but not used [-Wunused-function]
+   81 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:75:13: warning: 'Tone' defined but not used [-Wunused-function]
+   75 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+13:02:47 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:142:11: warning: implicit declaration of function 'HAL_TIM_SET_COUNTER' [-Wimplicit-function-declaration]
+  142 |           HAL_TIM_SET_COUNTER(&htim3, 0);
+      |           ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:143:18: warning: implicit declaration of function 'HAL_TIM_GET_COUNTER' [-Wimplicit-function-declaration]
+  143 |           while (HAL_TIM_GET_COUNTER (&htim3) < 10);  // wait for 10 us
+      |                  ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:169:1: error: expected identifier or '(' before '}' token
+  169 | }
+      | ^
+../Core/Src/main.c:81:13: warning: 'noTone' defined but not used [-Wunused-function]
+   81 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:75:13: warning: 'Tone' defined but not used [-Wunused-function]
+   75 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+13:02:48 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:142:11: warning: implicit declaration of function 'HAL_TIM_SET_COUNTER' [-Wimplicit-function-declaration]
+  142 |           HAL_TIM_SET_COUNTER(&htim3, 0);
+      |           ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:143:18: warning: implicit declaration of function 'HAL_TIM_GET_COUNTER' [-Wimplicit-function-declaration]
+  143 |           while (HAL_TIM_GET_COUNTER (&htim3) < 10);  // wait for 10 us
+      |                  ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:169:1: error: expected identifier or '(' before '}' token
+  169 | }
+      | ^
+../Core/Src/main.c:81:13: warning: 'noTone' defined but not used [-Wunused-function]
+   81 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:75:13: warning: 'Tone' defined but not used [-Wunused-function]
+   75 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+13:03:57 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:142:11: warning: implicit declaration of function 'HAL_TIM_SET_COUNTER' [-Wimplicit-function-declaration]
+  142 |           HAL_TIM_SET_COUNTER(&htim3, 0);
+      |           ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:143:18: warning: implicit declaration of function 'HAL_TIM_GET_COUNTER' [-Wimplicit-function-declaration]
+  143 |           while (HAL_TIM_GET_COUNTER (&htim3) < 10);  // wait for 10 us
+      |                  ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:169:1: error: expected identifier or '(' before '}' token
+  169 | }
+      | ^
+../Core/Src/main.c:81:13: warning: 'noTone' defined but not used [-Wunused-function]
+   81 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:75:13: warning: 'Tone' defined but not used [-Wunused-function]
+   75 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+13:04:17 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:142:11: warning: implicit declaration of function 'HAL_TIM_SET_COUNTER' [-Wimplicit-function-declaration]
+  142 |           HAL_TIM_SET_COUNTER(&htim3, 0);
+      |           ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:143:18: warning: implicit declaration of function 'HAL_TIM_GET_COUNTER' [-Wimplicit-function-declaration]
+  143 |           while (HAL_TIM_GET_COUNTER (&htim3) < 10);  // wait for 10 us
+      |                  ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:169:1: error: expected identifier or '(' before '}' token
+  169 | }
+      | ^
+../Core/Src/main.c:81:13: warning: 'noTone' defined but not used [-Wunused-function]
+   81 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:75:13: warning: 'Tone' defined but not used [-Wunused-function]
+   75 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+13:05:02 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:142:11: warning: implicit declaration of function 'HAL_TIM_SET_COUNTER' [-Wimplicit-function-declaration]
+  142 |           HAL_TIM_SET_COUNTER(&htim3, 0);
+      |           ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:143:18: warning: implicit declaration of function 'HAL_TIM_GET_COUNTER' [-Wimplicit-function-declaration]
+  143 |           while (HAL_TIM_GET_COUNTER (&htim3) < 10);  // wait for 10 us
+      |                  ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:169:1: error: expected identifier or '(' before '}' token
+  169 | }
+      | ^
+../Core/Src/main.c:81:13: warning: 'noTone' defined but not used [-Wunused-function]
+   81 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:75:13: warning: 'Tone' defined but not used [-Wunused-function]
+   75 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+13:05:25 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:142:11: warning: implicit declaration of function 'HAL_TIM_SET_COUNTER' [-Wimplicit-function-declaration]
+  142 |           HAL_TIM_SET_COUNTER(&htim3, 0);
+      |           ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:143:18: warning: implicit declaration of function 'HAL_TIM_GET_COUNTER' [-Wimplicit-function-declaration]
+  143 |           while (HAL_TIM_GET_COUNTER (&htim3) < 10);  // wait for 10 us
+      |                  ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:81:13: warning: 'noTone' defined but not used [-Wunused-function]
+   81 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:75:13: warning: 'Tone' defined but not used [-Wunused-function]
+   75 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/Nuko/Programs/STM IDE/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `main':
+C:/Users/Nuko/STM32CubeIDE/workspace_1.16.0/Midterm_MedicineBot/Debug/../Core/Src/main.c:142: undefined reference to `HAL_TIM_SET_COUNTER'
+C:/Nuko/Programs/STM IDE/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Nuko/STM32CubeIDE/workspace_1.16.0/Midterm_MedicineBot/Debug/../Core/Src/main.c:143: undefined reference to `HAL_TIM_GET_COUNTER'
+C:/Nuko/Programs/STM IDE/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Nuko/STM32CubeIDE/workspace_1.16.0/Midterm_MedicineBot/Debug/../Core/Src/main.c:149: undefined reference to `HAL_TIM_GET_COUNTER'
+C:/Nuko/Programs/STM IDE/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Nuko/STM32CubeIDE/workspace_1.16.0/Midterm_MedicineBot/Debug/../Core/Src/main.c:154: undefined reference to `HAL_TIM_GET_COUNTER'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: Midterm_MedicineBot.elf] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+13:05:34 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/Nuko/Programs/STM IDE/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `main':
+C:/Users/Nuko/STM32CubeIDE/workspace_1.16.0/Midterm_MedicineBot/Debug/../Core/Src/main.c:142: undefined reference to `HAL_TIM_SET_COUNTER'
+C:/Nuko/Programs/STM IDE/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Nuko/STM32CubeIDE/workspace_1.16.0/Midterm_MedicineBot/Debug/../Core/Src/main.c:143: undefined reference to `HAL_TIM_GET_COUNTER'
+C:/Nuko/Programs/STM IDE/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Nuko/STM32CubeIDE/workspace_1.16.0/Midterm_MedicineBot/Debug/../Core/Src/main.c:149: undefined reference to `HAL_TIM_GET_COUNTER'
+C:/Nuko/Programs/STM IDE/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Nuko/STM32CubeIDE/workspace_1.16.0/Midterm_MedicineBot/Debug/../Core/Src/main.c:154: undefined reference to `HAL_TIM_GET_COUNTER'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: Midterm_MedicineBot.elf] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+13:05:53 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:142:11: warning: implicit declaration of function '_HAL_TIM_SET_COUNTER' [-Wimplicit-function-declaration]
+  142 |           _HAL_TIM_SET_COUNTER(&htim3, 0);
+      |           ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:143:18: warning: implicit declaration of function 'HAL_TIM_GET_COUNTER' [-Wimplicit-function-declaration]
+  143 |           while (HAL_TIM_GET_COUNTER (&htim3) < 10);  // wait for 10 us
+      |                  ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:81:13: warning: 'noTone' defined but not used [-Wunused-function]
+   81 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:75:13: warning: 'Tone' defined but not used [-Wunused-function]
+   75 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/Nuko/Programs/STM IDE/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `main':
+C:/Users/Nuko/STM32CubeIDE/workspace_1.16.0/Midterm_MedicineBot/Debug/../Core/Src/main.c:142: undefined reference to `_HAL_TIM_SET_COUNTER'
+C:/Nuko/Programs/STM IDE/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Nuko/STM32CubeIDE/workspace_1.16.0/Midterm_MedicineBot/Debug/../Core/Src/main.c:143: undefined reference to `HAL_TIM_GET_COUNTER'
+C:/Nuko/Programs/STM IDE/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Nuko/STM32CubeIDE/workspace_1.16.0/Midterm_MedicineBot/Debug/../Core/Src/main.c:149: undefined reference to `HAL_TIM_GET_COUNTER'
+C:/Nuko/Programs/STM IDE/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Nuko/STM32CubeIDE/workspace_1.16.0/Midterm_MedicineBot/Debug/../Core/Src/main.c:154: undefined reference to `HAL_TIM_GET_COUNTER'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: Midterm_MedicineBot.elf] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+13:06:23 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:142:11: warning: implicit declaration of function 'HAL_TIM_SetCounter' [-Wimplicit-function-declaration]
+  142 |           HAL_TIM_SetCounter(&htim3, 0);
+      |           ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:143:18: warning: implicit declaration of function 'HAL_TIM_GET_COUNTER' [-Wimplicit-function-declaration]
+  143 |           while (HAL_TIM_GET_COUNTER (&htim3) < 10);  // wait for 10 us
+      |                  ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:81:13: warning: 'noTone' defined but not used [-Wunused-function]
+   81 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:75:13: warning: 'Tone' defined but not used [-Wunused-function]
+   75 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/Nuko/Programs/STM IDE/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `main':
+C:/Users/Nuko/STM32CubeIDE/workspace_1.16.0/Midterm_MedicineBot/Debug/../Core/Src/main.c:142: undefined reference to `HAL_TIM_SetCounter'
+C:/Nuko/Programs/STM IDE/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Nuko/STM32CubeIDE/workspace_1.16.0/Midterm_MedicineBot/Debug/../Core/Src/main.c:143: undefined reference to `HAL_TIM_GET_COUNTER'
+C:/Nuko/Programs/STM IDE/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Nuko/STM32CubeIDE/workspace_1.16.0/Midterm_MedicineBot/Debug/../Core/Src/main.c:149: undefined reference to `HAL_TIM_GET_COUNTER'
+C:/Nuko/Programs/STM IDE/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Nuko/STM32CubeIDE/workspace_1.16.0/Midterm_MedicineBot/Debug/../Core/Src/main.c:154: undefined reference to `HAL_TIM_GET_COUNTER'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: Midterm_MedicineBot.elf] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+13:15:38 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:142:11: warning: implicit declaration of function 'HAL_TIM_SetCounter' [-Wimplicit-function-declaration]
+  142 |           HAL_TIM_SetCounter(&htim3, 0);
+      |           ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:143:18: warning: implicit declaration of function 'HAL_TIM_GET_COUNTER' [-Wimplicit-function-declaration]
+  143 |           while (HAL_TIM_GET_COUNTER (&htim3) < 10);  // wait for 10 us
+      |                  ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:81:13: warning: 'noTone' defined but not used [-Wunused-function]
+   81 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:75:13: warning: 'Tone' defined but not used [-Wunused-function]
+   75 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/Nuko/Programs/STM IDE/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `main':
+C:/Users/Nuko/STM32CubeIDE/workspace_1.16.0/Midterm_MedicineBot/Debug/../Core/Src/main.c:142: undefined reference to `HAL_TIM_SetCounter'
+C:/Nuko/Programs/STM IDE/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Nuko/STM32CubeIDE/workspace_1.16.0/Midterm_MedicineBot/Debug/../Core/Src/main.c:143: undefined reference to `HAL_TIM_GET_COUNTER'
+C:/Nuko/Programs/STM IDE/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Nuko/STM32CubeIDE/workspace_1.16.0/Midterm_MedicineBot/Debug/../Core/Src/main.c:149: undefined reference to `HAL_TIM_GET_COUNTER'
+C:/Nuko/Programs/STM IDE/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Nuko/STM32CubeIDE/workspace_1.16.0/Midterm_MedicineBot/Debug/../Core/Src/main.c:154: undefined reference to `HAL_TIM_GET_COUNTER'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: Midterm_MedicineBot.elf] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+13:16:28 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:85:13: warning: 'noTone' defined but not used [-Wunused-function]
+   85 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:79:13: warning: 'Tone' defined but not used [-Wunused-function]
+   79 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  14596	     12	   1876	  16484	   4064	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+13:16:48 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14596	     12	   1876	  16484	   4064	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+13:22:16 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:163:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  163 |           sprintf(msg, "Distance: %d cm\r\n", Distance);
+      |           ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:163:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  163 |           sprintf(msg, "Distance: %d cm\r\n", Distance);
+      |           ^~~~~~~
+../Core/Src/main.c:163:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:164:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  164 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:21:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   20 | #include "main.h"
+  +++ |+#include <string.h>
+   21 | 
+../Core/Src/main.c:164:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  164 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:164:53: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:85:13: warning: 'noTone' defined but not used [-Wunused-function]
+   85 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:79:13: warning: 'Tone' defined but not used [-Wunused-function]
+   79 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  17944	     92	   2204	  20240	   4f10	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+13:26:51 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:169:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  169 |           sprintf(msg, "Distance: %d cm\r\n", currentDistance);
+      |           ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:169:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  169 |           sprintf(msg, "Distance: %d cm\r\n", currentDistance);
+      |           ^~~~~~~
+../Core/Src/main.c:169:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:170:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  170 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:21:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   20 | #include "main.h"
+  +++ |+#include <string.h>
+   21 | 
+../Core/Src/main.c:170:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  170 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:170:53: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:106:13: warning: 'noTone' defined but not used [-Wunused-function]
+  106 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:100:13: warning: 'Tone' defined but not used [-Wunused-function]
+  100 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  17984	     92	   2204	  20280	   4f38	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 
+13:36:31 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:169:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  169 |           sprintf(msg, "Distance: %d cm\r\n", currentDistance);
+      |           ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:169:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  169 |           sprintf(msg, "Distance: %d cm\r\n", currentDistance);
+      |           ^~~~~~~
+../Core/Src/main.c:169:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:170:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  170 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:21:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   20 | #include "main.h"
+  +++ |+#include <string.h>
+   21 | 
+../Core/Src/main.c:170:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  170 |           HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:170:53: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:108:13: warning: 'noTone' defined but not used [-Wunused-function]
+  108 | static void noTone() {
+      |             ^~~~~~
+../Core/Src/main.c:102:13: warning: 'Tone' defined but not used [-Wunused-function]
+  102 | static void Tone(uint32_t Frequency, uint32_t Duration) {
+      |             ^~~~
+arm-none-eabi-gcc -o "Midterm_MedicineBot.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Midterm_MedicineBot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Midterm_MedicineBot.elf
+ 
+arm-none-eabi-size  Midterm_MedicineBot.elf 
+arm-none-eabi-objdump -h -S Midterm_MedicineBot.elf  > "Midterm_MedicineBot.list"
+   text	   data	    bss	    dec	    hex	filename
+  17980	     92	   2460	  20532	   5034	Midterm_MedicineBot.elf
+Finished building: default.size.stdout
+ 
+Finished building: Midterm_MedicineBot.list
+ 

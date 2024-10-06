@@ -1,0 +1,40 @@
+21:23:15 **** Incremental Build of configuration Debug for project Component_UltrasonicSensor ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:151:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  151 |           sprintf(buf, "Distance: %d cm\r\n", d);
+      |           ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:151:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  151 |           sprintf(buf, "Distance: %d cm\r\n", d);
+      |           ^~~~~~~
+../Core/Src/main.c:151:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:152:53: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  152 |           HAL_UART_Transmit(&huart2, (uint8_t*)buf, strlen(buf), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:21:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   20 | #include "main.h"
+  +++ |+#include <string.h>
+   21 | 
+../Core/Src/main.c:152:53: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  152 |           HAL_UART_Transmit(&huart2, (uint8_t*)buf, strlen(buf), 1000);
+      |                                                     ^~~~~~
+../Core/Src/main.c:152:53: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Component_UltrasonicSensor.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Nuko\STM32CubeIDE\workspace_1.16.1\Component_UltrasonicSensor\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Component_UltrasonicSensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Component_UltrasonicSensor.elf
+ 
+arm-none-eabi-size  Component_UltrasonicSensor.elf 
+arm-none-eabi-objdump -h -S Component_UltrasonicSensor.elf  > "Component_UltrasonicSensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  15404	     92	   2060	  17556	   4494	Component_UltrasonicSensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: Component_UltrasonicSensor.list
+ 
+
+21:23:16 Build Finished. 0 errors, 4 warnings. (took 463ms)
+
