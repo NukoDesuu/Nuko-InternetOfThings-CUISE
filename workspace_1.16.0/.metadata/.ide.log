@@ -4231,3 +4231,457 @@
 2024-10-06 17:27:23,421 [INFO] ProjectBuilder:5097 - Time for Generating toolchain IDE Files: 332mS.
 2024-10-06 17:27:23,421 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 0mS.
 2024-10-06 17:27:23,424 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 0mS.
+2024-10-06 19:12:55,154 [ERROR] RtosPanel:558 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2024-10-06 19:12:56,848 [ERROR] RtosPanel:558 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2024-10-06 19:12:59,547 [INFO] Gpio:277 - dependency for GPIO [RCC, SYS, TIM2, TIM3, USART2]
+2024-10-06 19:13:13,340 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 345871336 Bytes (838860800)
+2024-10-06 19:13:13,420 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 359502824 Bytes (838860800)
+2024-10-06 19:13:13,832 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 423992296 Bytes (838860800)
+2024-10-06 19:13:16,229 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2024-10-06 19:13:16,229 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: FREERTOS
+2024-10-06 19:13:16,229 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: USART
+2024-10-06 19:13:16,229 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8
+2024-10-06 19:13:16,229 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8
+2024-10-06 19:13:16,229 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8
+2024-10-06 19:13:16,229 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2024-10-06 19:13:16,229 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2024-10-06 19:13:16,229 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2024-10-06 19:13:16,230 [INFO] CodeGenerator:807 - code generatio: config db path: C:\Nuko\Programs\STM IDE\STM32CubeIDE_1.16.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.12.1.202409122256\\db\
+2024-10-06 19:13:16,271 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\license.tmp_save
+2024-10-06 19:13:16,321 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\license.tmp
+2024-10-06 19:13:16,333 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\gpio.tmp_save
+2024-10-06 19:13:16,389 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\gpio.tmp
+2024-10-06 19:13:16,464 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2024-10-06 19:13:16,468 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_inc.tmp_save
+2024-10-06 19:13:16,518 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_inc.tmp
+2024-10-06 19:13:16,520 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_kernelInit.tmp_save
+2024-10-06 19:13:16,558 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_kernelInit.tmp
+2024-10-06 19:13:16,560 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_kernelStart.tmp_save
+2024-10-06 19:13:16,597 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_kernelStart.tmp
+2024-10-06 19:13:16,599 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_typedefs.tmp_save
+2024-10-06 19:13:16,631 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_typedefs.tmp
+2024-10-06 19:13:16,633 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_vars.tmp_save
+2024-10-06 19:13:16,676 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_vars.tmp
+2024-10-06 19:13:16,678 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_pfp.tmp_save
+2024-10-06 19:13:16,716 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_pfp.tmp
+2024-10-06 19:13:16,719 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_obj_creat.tmp_save
+2024-10-06 19:13:16,759 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_obj_creat.tmp
+2024-10-06 19:13:16,761 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_default_thread.tmp_save
+2024-10-06 19:13:16,802 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_default_thread.tmp
+2024-10-06 19:13:16,804 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_threads.tmp_save
+2024-10-06 19:13:16,839 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_threads.tmp
+2024-10-06 19:13:16,845 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2024-10-06 19:13:16,849 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_inc.tmp_save
+2024-10-06 19:13:16,890 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_inc.tmp
+2024-10-06 19:13:16,893 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_kernelInit.tmp_save
+2024-10-06 19:13:16,921 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_kernelInit.tmp
+2024-10-06 19:13:16,923 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_kernelStart.tmp_save
+2024-10-06 19:13:16,954 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_kernelStart.tmp
+2024-10-06 19:13:16,958 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_typedefs.tmp_save
+2024-10-06 19:13:16,988 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_typedefs.tmp
+2024-10-06 19:13:16,995 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_vars.tmp_save
+2024-10-06 19:13:17,028 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_vars.tmp
+2024-10-06 19:13:17,030 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_pfp.tmp_save
+2024-10-06 19:13:17,061 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_pfp.tmp
+2024-10-06 19:13:17,069 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_obj_creat.tmp_save
+2024-10-06 19:13:17,103 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_obj_creat.tmp
+2024-10-06 19:13:17,106 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_default_thread.tmp_save
+2024-10-06 19:13:17,138 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_default_thread.tmp
+2024-10-06 19:13:17,140 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_threads.tmp_save
+2024-10-06 19:13:17,171 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_threads.tmp
+2024-10-06 19:13:17,180 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Inc\FreeRTOSConfig.h_save
+2024-10-06 19:13:17,236 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Inc\FreeRTOSConfig.h
+2024-10-06 19:13:17,244 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Src\freertos.c_save
+2024-10-06 19:13:17,287 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Src\freertos.c
+2024-10-06 19:13:17,298 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Src\stm32f4xx_it.c_save
+2024-10-06 19:13:17,400 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Src\stm32f4xx_it.c
+2024-10-06 19:13:17,408 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Inc\stm32f4xx_it.h_save
+2024-10-06 19:13:17,444 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Inc\stm32f4xx_it.h
+2024-10-06 19:13:17,454 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Src\stm32f4xx_hal_msp.c_save
+2024-10-06 19:13:17,513 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Src\stm32f4xx_hal_msp.c
+2024-10-06 19:13:17,516 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\system.tmp_save
+2024-10-06 19:13:17,558 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\system.tmp
+2024-10-06 19:13:17,566 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Src\stm32f4xx_hal_timebase_tim.c_save
+2024-10-06 19:13:17,605 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Src\stm32f4xx_hal_timebase_tim.c
+2024-10-06 19:13:17,615 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-10-06 19:13:17,666 [INFO] CodeEngine:335 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Inc\stm32f4xx_hal_conf.h
+2024-10-06 19:13:17,680 [WARN] IPConfigManager:3554 - IP not found : TIM
+2024-10-06 19:13:17,680 [WARN] CodeGenerator:4002 - IP not found : null
+2024-10-06 19:13:17,688 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Inc\main.h_save
+2024-10-06 19:13:17,747 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Inc\main.h
+2024-10-06 19:13:17,756 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Src\main.c_save
+2024-10-06 19:13:17,832 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Src\main.c
+2024-10-06 19:13:18,049 [INFO] ProjectBuilder:3249 - Time for Copy HAL[1] : 139mS.
+2024-10-06 19:13:18,051 [INFO] ProjectBuilder:4828 - Project Generator version: 4.5.0-B34
+2024-10-06 19:13:18,087 [INFO] ConfigFileManager:1531 - The Die is : DIE431
+2024-10-06 19:13:18,486 [INFO] ProjectBuilder:5097 - Time for Generating toolchain IDE Files: 435mS.
+2024-10-06 19:13:18,487 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 0mS.
+2024-10-06 19:13:18,489 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 0mS.
+2024-10-06 19:41:36,928 [INFO] Gpio:277 - dependency for GPIO [RCC, SYS, TIM2, TIM3, USART2]
+2024-10-06 19:41:36,949 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-10-06 19:41:39,283 [INFO] Gpio:277 - dependency for GPIO [RCC, SYS, TIM2, TIM3, USART2]
+2024-10-06 19:41:39,303 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-10-06 19:41:41,150 [INFO] Gpio:277 - dependency for GPIO [RCC, SYS, TIM2, TIM3, USART2]
+2024-10-06 19:41:41,171 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-10-06 19:42:56,866 [INFO] Gpio:277 - dependency for GPIO [RCC, SYS, TIM2, TIM3, USART2]
+2024-10-06 19:42:56,922 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-10-06 19:45:48,615 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 557524208 Bytes (866123776)
+2024-10-06 19:45:48,702 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 594850680 Bytes (866123776)
+2024-10-06 19:45:49,189 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 294421480 Bytes (866123776)
+2024-10-06 19:45:50,209 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2024-10-06 19:45:50,209 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: FREERTOS
+2024-10-06 19:45:50,209 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: USART
+2024-10-06 19:45:50,209 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8
+2024-10-06 19:45:50,209 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8
+2024-10-06 19:45:50,209 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8
+2024-10-06 19:45:50,209 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2024-10-06 19:45:50,209 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2024-10-06 19:45:50,210 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2024-10-06 19:45:50,210 [INFO] CodeGenerator:807 - code generatio: config db path: C:\Nuko\Programs\STM IDE\STM32CubeIDE_1.16.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.12.1.202409122256\\db\
+2024-10-06 19:45:50,258 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\license.tmp_save
+2024-10-06 19:45:50,335 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\license.tmp
+2024-10-06 19:45:50,348 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\gpio.tmp_save
+2024-10-06 19:45:50,408 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\gpio.tmp
+2024-10-06 19:45:50,471 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2024-10-06 19:45:50,474 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_inc.tmp_save
+2024-10-06 19:45:50,518 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_inc.tmp
+2024-10-06 19:45:50,519 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_kernelInit.tmp_save
+2024-10-06 19:45:50,552 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_kernelInit.tmp
+2024-10-06 19:45:50,555 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_kernelStart.tmp_save
+2024-10-06 19:45:50,584 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_kernelStart.tmp
+2024-10-06 19:45:50,586 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_typedefs.tmp_save
+2024-10-06 19:45:50,620 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_typedefs.tmp
+2024-10-06 19:45:50,621 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_vars.tmp_save
+2024-10-06 19:45:50,657 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_vars.tmp
+2024-10-06 19:45:50,659 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_pfp.tmp_save
+2024-10-06 19:45:50,688 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_pfp.tmp
+2024-10-06 19:45:50,689 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_obj_creat.tmp_save
+2024-10-06 19:45:50,725 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_obj_creat.tmp
+2024-10-06 19:45:50,727 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_default_thread.tmp_save
+2024-10-06 19:45:50,764 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_default_thread.tmp
+2024-10-06 19:45:50,767 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_threads.tmp_save
+2024-10-06 19:45:50,795 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_threads.tmp
+2024-10-06 19:45:50,800 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2024-10-06 19:45:50,804 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_inc.tmp_save
+2024-10-06 19:45:50,842 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_inc.tmp
+2024-10-06 19:45:50,844 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_kernelInit.tmp_save
+2024-10-06 19:45:50,873 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_kernelInit.tmp
+2024-10-06 19:45:50,876 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_kernelStart.tmp_save
+2024-10-06 19:45:50,904 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_kernelStart.tmp
+2024-10-06 19:45:50,910 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_typedefs.tmp_save
+2024-10-06 19:45:50,939 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_typedefs.tmp
+2024-10-06 19:45:50,945 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_vars.tmp_save
+2024-10-06 19:45:50,977 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_vars.tmp
+2024-10-06 19:45:50,979 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_pfp.tmp_save
+2024-10-06 19:45:51,009 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_pfp.tmp
+2024-10-06 19:45:51,016 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_obj_creat.tmp_save
+2024-10-06 19:45:51,047 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_obj_creat.tmp
+2024-10-06 19:45:51,050 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_default_thread.tmp_save
+2024-10-06 19:45:51,080 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_default_thread.tmp
+2024-10-06 19:45:51,082 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_threads.tmp_save
+2024-10-06 19:45:51,109 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\rtos_threads.tmp
+2024-10-06 19:45:51,118 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Inc\FreeRTOSConfig.h_save
+2024-10-06 19:45:51,158 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Inc\FreeRTOSConfig.h
+2024-10-06 19:45:51,165 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Src\freertos.c_save
+2024-10-06 19:45:51,197 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Src\freertos.c
+2024-10-06 19:45:51,207 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Src\stm32f4xx_it.c_save
+2024-10-06 19:45:51,275 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Src\stm32f4xx_it.c
+2024-10-06 19:45:51,278 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Inc\stm32f4xx_it.h_save
+2024-10-06 19:45:51,309 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Inc\stm32f4xx_it.h
+2024-10-06 19:45:51,319 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Src\stm32f4xx_hal_msp.c_save
+2024-10-06 19:45:51,375 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Src\stm32f4xx_hal_msp.c
+2024-10-06 19:45:51,377 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\system.tmp_save
+2024-10-06 19:45:51,405 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\MXTmpFiles\system.tmp
+2024-10-06 19:45:51,412 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Src\stm32f4xx_hal_timebase_tim.c_save
+2024-10-06 19:45:51,445 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Src\stm32f4xx_hal_timebase_tim.c
+2024-10-06 19:45:51,461 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-10-06 19:45:51,509 [INFO] CodeEngine:335 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Inc\stm32f4xx_hal_conf.h
+2024-10-06 19:45:51,520 [WARN] IPConfigManager:3554 - IP not found : TIM
+2024-10-06 19:45:51,520 [WARN] CodeGenerator:4002 - IP not found : null
+2024-10-06 19:45:51,528 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Inc\main.h_save
+2024-10-06 19:45:51,585 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Inc\main.h
+2024-10-06 19:45:51,591 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Src\main.c_save
+2024-10-06 19:45:51,666 [INFO] CodeEngine:279 - Generated code: C:\Users\Nuko\STM32CubeIDE\workspace_1.16.0\Midterm_MedicineBot\Core\Src\main.c
+2024-10-06 19:45:51,829 [INFO] ProjectBuilder:3249 - Time for Copy HAL[1] : 97mS.
+2024-10-06 19:45:51,831 [INFO] ProjectBuilder:4828 - Project Generator version: 4.5.0-B34
+2024-10-06 19:45:51,862 [INFO] ConfigFileManager:1531 - The Die is : DIE431
+2024-10-06 19:45:52,177 [INFO] ProjectBuilder:5097 - Time for Generating toolchain IDE Files: 346mS.
+2024-10-06 19:45:52,178 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 0mS.
+2024-10-06 19:45:52,180 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 0mS.
+2024-10-06 19:46:04,585 [INFO] MainUpdater:2873 - connection check result : 10
+2024-10-06 19:46:04,586 [INFO] MainUpdater:2873 - connection check result : 10
+2024-10-06 19:46:04,597 [INFO] MicroXplorer:468 - Change Database Path : 
+2024-10-06 19:46:04,597 [INFO] MicroXplorer:498 - Change Database Version : DB.6.0.121
+2024-10-06 19:46:04,601 [ERROR] ProjectManagerView:394 - 
+java.lang.NullPointerException: Cannot invoke "javax.swing.JTextField.getText()" because the return value of "java.util.List.get(int)" is null
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab$10.caretUpdate(ProjectChoiceTab.java:2622) ~[filemanager.jar:?]
+	at javax.swing.text.JTextComponent.fireCaretUpdate(JTextComponent.java:412) ~[?:?]
+	at javax.swing.text.JTextComponent$MutableCaretEvent.fire(JTextComponent.java:4491) ~[?:?]
+	at javax.swing.text.JTextComponent$MutableCaretEvent.stateChanged(JTextComponent.java:4513) ~[?:?]
+	at javax.swing.text.DefaultCaret.fireStateChanged(DefaultCaret.java:842) ~[?:?]
+	at javax.swing.text.DefaultCaret.changeCaretPosition(DefaultCaret.java:1313) ~[?:?]
+	at javax.swing.text.DefaultCaret.handleSetDot(DefaultCaret.java:1212) ~[?:?]
+	at javax.swing.text.DefaultCaret.setDot(DefaultCaret.java:1193) ~[?:?]
+	at javax.swing.text.DefaultCaret$Handler.insertUpdate(DefaultCaret.java:1789) ~[?:?]
+	at javax.swing.text.AbstractDocument.fireInsertUpdate(AbstractDocument.java:226) ~[?:?]
+	at javax.swing.text.AbstractDocument.handleInsertString(AbstractDocument.java:780) ~[?:?]
+	at javax.swing.text.AbstractDocument.insertString(AbstractDocument.java:739) ~[?:?]
+	at javax.swing.text.PlainDocument.insertString(PlainDocument.java:131) ~[?:?]
+	at javax.swing.text.AbstractDocument.replace(AbstractDocument.java:698) ~[?:?]
+	at javax.swing.text.JTextComponent.setText(JTextComponent.java:1729) ~[?:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab.createHeapStackFields(ProjectChoiceTab.java:972) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab.buildLinkSettingsPanel(ProjectChoiceTab.java:3597) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab.defineWindowsFields(ProjectChoiceTab.java:1940) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab.updateSettings(ProjectChoiceTab.java:550) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectSettingsPanel.UpdateDialog(ProjectSettingsPanel.java:245) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.ProjectManagerView.propertyChange(ProjectManagerView.java:391) ~[filemanager.jar:?]
+	at java.beans.PropertyChangeSupport.fire(PropertyChangeSupport.java:343) ~[?:?]
+	at java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:335) ~[?:?]
+	at java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:268) ~[?:?]
+	at com.st.microxplorer.util.MXPropertyChangeSupport.firePropertyChange(MXPropertyChangeSupport.java:54) ~[STM32CubeMX.jar:?]
+	at com.st.microxplorer.mxsystem.MxSystem.closeConfig(MxSystem.java:900) ~[STM32CubeMX.jar:?]
+	at com.st.microxplorer.maingui.MainPanel.closeConfig(MainPanel.java:781) ~[STM32CubeMX.jar:?]
+	at com.st.microxplorer.plugins.filemanager.engine.OpenFileManager.loadConfigurationFile(OpenFileManager.java:265) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.filemanager.engine.MainFileManager.userLoadConfig(MainFileManager.java:352) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.filemanager.engine.MainFileManager.userLoadConfig(MainFileManager.java:330) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.filemanager.FileManagerView.getSpecificTask(FileManagerView.java:246) ~[filemanager.jar:?]
+	at com.st.stm32cube.common.mx.editor.CubeMxEditor.getMxTabbedPaneInstance(CubeMxEditor.java:1198) ~[com.st.stm32cube.common.mx_6.12.1.202409122256/:?]
+	at com.st.stm32cube.common.mx.editor.CubeMxEditor$12$1.createSwingComponent(CubeMxEditor.java:1068) ~[com.st.stm32cube.common.mx_6.12.1.202409122256/:?]
+	at com.st.stm32cube.common.mx.oss.core.awtswtbridge.EmbeddedSwingComposite.doComponentCreation(EmbeddedSwingComposite.java:492) ~[com.st.stm32cube.common.mx.oss_6.12.1.202409122256/:?]
+	at com.st.stm32cube.common.mx.oss.core.awtswtbridge.EmbeddedSwingComposite$4.run(EmbeddedSwingComposite.java:291) ~[com.st.stm32cube.common.mx.oss_6.12.1.202409122256/:?]
+	at com.st.stm32cube.common.mx.oss.core.awtswtbridge.AwtEnvironment$2.run(AwtEnvironment.java:166) ~[com.st.stm32cube.common.mx.oss_6.12.1.202409122256/:?]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86) ~[?:?]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:742) ~[?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) ~[?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) ~[?:?]
+2024-10-06 19:46:04,606 [WARN] ThirdParty:871 - waiting for thirdparty lock release [close project]
+2024-10-06 19:46:04,606 [INFO] ThirdParty:873 - entering critical section [close project]
+2024-10-06 19:46:04,606 [INFO] ThirdParty:883 - exiting critical section [close project]
+2024-10-06 19:46:04,607 [INFO] PinOutPanel:1561 - setPackage(No Configuration,No Configuration)
+2024-10-06 19:46:04,610 [WARN] IpParametersView:151 - Warning: This peripheral hasn't parameters
+2024-10-06 19:46:04,615 [WARN] MainPanel:284 - <html><b><center>Warning: This peripheral has no parameters to be configured<br></b></html>
+2024-10-06 19:46:04,624 [INFO] UtilMem:75 - Begin LoadConfig() Used Memory: 727770600 Bytes (908066816)
+2024-10-06 19:46:04,624 [INFO] MicroXplorer:468 - Change Database Path : 
+2024-10-06 19:46:04,624 [INFO] MicroXplorer:498 - Change Database Version : DB.6.0.121
+2024-10-06 19:46:04,624 [INFO] OpenFileManager:332 - Change cursor
+2024-10-06 19:46:04,633 [INFO] RulesReader:64 - Compatibility file has been processed (297 Rules)
+2024-10-06 19:46:04,635 [INFO] Mcu:2032 - Initializing MCU STM32F411R(C-E)Tx STM32F411RETx STM32F411RET6
+2024-10-06 19:46:05,031 [INFO] Context:742 - Trying to add GPIOservice into a context  which must be forbidden
+2024-10-06 19:46:05,281 [INFO] RtosManager:555 - Registered RTOS mode: class=CMSIS, group=RTOS, mode=CMSIS_V1, owner=FREERTOS
+2024-10-06 19:46:05,281 [INFO] RtosManager:555 - Registered RTOS mode: class=CMSIS, group=RTOS2, mode=CMSIS_V2, owner=FREERTOS
+2024-10-06 19:46:05,282 [INFO] RtosManager:555 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V1, owner=FREERTOS
+2024-10-06 19:46:05,282 [INFO] RtosManager:555 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V2, owner=FREERTOS
+2024-10-06 19:46:05,282 [WARN] ModelIntegratedComponent:184 - Missing modes for component STMicroelectronics:FreeRTOS:0.0.1:STMicroelectronics:RTOS:FreeRTOS:Core:::10.2.0:
+2024-10-06 19:46:05,284 [WARN] ModelIntegratedComponent:182 - Modes not found for component STMicroelectronics:USB_HOST:1.0.0:STMicroelectronics:USB::USB Host:Audio HS::1.0:USB_HOST_1_0_RESTRICTED_HS
+2024-10-06 19:46:05,284 [WARN] ModelIntegratedComponent:188 - Modes not found for component STMicroelectronics:USB_HOST:1.0.0:STMicroelectronics:USB::USB Host:Audio HS::1.0:USB_HOST_1_0_RESTRICTED_HS
+2024-10-06 19:46:05,284 [WARN] ModelIntegratedComponent:182 - Modes not found for component STMicroelectronics:USB_HOST:1.0.0:STMicroelectronics:USB::USB Host:CDC HS::1.0:USB_HOST_1_0_RESTRICTED_HS
+2024-10-06 19:46:05,284 [WARN] ModelIntegratedComponent:188 - Modes not found for component STMicroelectronics:USB_HOST:1.0.0:STMicroelectronics:USB::USB Host:CDC HS::1.0:USB_HOST_1_0_RESTRICTED_HS
+2024-10-06 19:46:05,284 [WARN] ModelIntegratedComponent:182 - Modes not found for component STMicroelectronics:USB_HOST:1.0.0:STMicroelectronics:USB::USB Host:MSC HS::1.0:USB_HOST_1_0_RESTRICTED_HS
+2024-10-06 19:46:05,284 [WARN] ModelIntegratedComponent:188 - Modes not found for component STMicroelectronics:USB_HOST:1.0.0:STMicroelectronics:USB::USB Host:MSC HS::1.0:USB_HOST_1_0_RESTRICTED_HS
+2024-10-06 19:46:05,284 [WARN] ModelIntegratedComponent:182 - Modes not found for component STMicroelectronics:USB_HOST:1.0.0:STMicroelectronics:USB::USB Host:HID HS::1.0:USB_HOST_1_0_RESTRICTED_HS
+2024-10-06 19:46:05,284 [WARN] ModelIntegratedComponent:188 - Modes not found for component STMicroelectronics:USB_HOST:1.0.0:STMicroelectronics:USB::USB Host:HID HS::1.0:USB_HOST_1_0_RESTRICTED_HS
+2024-10-06 19:46:05,284 [WARN] ModelIntegratedComponent:182 - Modes not found for component STMicroelectronics:USB_HOST:1.0.0:STMicroelectronics:USB::USB Host:MTP HS::1.0:USB_HOST_1_0_RESTRICTED_HS
+2024-10-06 19:46:05,284 [WARN] ModelIntegratedComponent:188 - Modes not found for component STMicroelectronics:USB_HOST:1.0.0:STMicroelectronics:USB::USB Host:MTP HS::1.0:USB_HOST_1_0_RESTRICTED_HS
+2024-10-06 19:46:05,285 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,285 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,285 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,285 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,285 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,285 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,285 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,285 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,285 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,285 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,285 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,285 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,285 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,285 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,285 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,285 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,285 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,286 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,286 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,286 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,286 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,286 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,286 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,286 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,286 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,286 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,286 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,286 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,286 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,286 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,286 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,286 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,286 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,286 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,286 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2024-10-06 19:46:05,286 [WARN] ModelPack:524 - Component already loaded: STMicroelectronics:HAL Drivers:0.0.0:STMicroelectronics:Device:STMicro_Driver:XSPI:HAL::0.0.1:HAL_XSPI
+2024-10-06 19:46:05,315 [WARN] ModelIntegratedComponent:182 - Modes not found for component STMicroelectronics:USB_DEVICE:1.0.0:STMicroelectronics:USB::USB Device:Audio HS::1.0:USB_DEVICE_1_0_RESTRICTED_HS
+2024-10-06 19:46:05,315 [WARN] ModelIntegratedComponent:188 - Modes not found for component STMicroelectronics:USB_DEVICE:1.0.0:STMicroelectronics:USB::USB Device:Audio HS::1.0:USB_DEVICE_1_0_RESTRICTED_HS
+2024-10-06 19:46:05,315 [WARN] ModelIntegratedComponent:182 - Modes not found for component STMicroelectronics:USB_DEVICE:1.0.0:STMicroelectronics:USB::USB Device:CDC HS::1.0:USB_DEVICE_1_0_RESTRICTED_HS
+2024-10-06 19:46:05,315 [WARN] ModelIntegratedComponent:188 - Modes not found for component STMicroelectronics:USB_DEVICE:1.0.0:STMicroelectronics:USB::USB Device:CDC HS::1.0:USB_DEVICE_1_0_RESTRICTED_HS
+2024-10-06 19:46:05,315 [WARN] ModelIntegratedComponent:182 - Modes not found for component STMicroelectronics:USB_DEVICE:1.0.0:STMicroelectronics:USB::USB Device:DFU HS::1.0:USB_DEVICE_1_0_RESTRICTED_HS
+2024-10-06 19:46:05,315 [WARN] ModelIntegratedComponent:188 - Modes not found for component STMicroelectronics:USB_DEVICE:1.0.0:STMicroelectronics:USB::USB Device:DFU HS::1.0:USB_DEVICE_1_0_RESTRICTED_HS
+2024-10-06 19:46:05,315 [WARN] ModelIntegratedComponent:182 - Modes not found for component STMicroelectronics:USB_DEVICE:1.0.0:STMicroelectronics:USB::USB Device:HID HS::1.0:USB_DEVICE_1_0_RESTRICTED_HS
+2024-10-06 19:46:05,315 [WARN] ModelIntegratedComponent:188 - Modes not found for component STMicroelectronics:USB_DEVICE:1.0.0:STMicroelectronics:USB::USB Device:HID HS::1.0:USB_DEVICE_1_0_RESTRICTED_HS
+2024-10-06 19:46:05,315 [WARN] ModelIntegratedComponent:182 - Modes not found for component STMicroelectronics:USB_DEVICE:1.0.0:STMicroelectronics:USB::USB Device:Custom HID HS::1.0:USB_DEVICE_1_0_RESTRICTED_HS
+2024-10-06 19:46:05,315 [WARN] ModelIntegratedComponent:188 - Modes not found for component STMicroelectronics:USB_DEVICE:1.0.0:STMicroelectronics:USB::USB Device:Custom HID HS::1.0:USB_DEVICE_1_0_RESTRICTED_HS
+2024-10-06 19:46:05,315 [WARN] ModelIntegratedComponent:182 - Modes not found for component STMicroelectronics:USB_DEVICE:1.0.0:STMicroelectronics:USB::USB Device:MSC HS::1.0:USB_DEVICE_1_0_RESTRICTED_HS
+2024-10-06 19:46:05,315 [WARN] ModelIntegratedComponent:188 - Modes not found for component STMicroelectronics:USB_DEVICE:1.0.0:STMicroelectronics:USB::USB Device:MSC HS::1.0:USB_DEVICE_1_0_RESTRICTED_HS
+2024-10-06 19:46:05,323 [INFO] ThirdPartyModel:298 - Start build external matchings
+2024-10-06 19:46:05,560 [INFO] ThirdPartyModel:316 - End build external matchings
+2024-10-06 19:46:05,566 [INFO] RtosManager:919 - Current active RTOS is FREERTOS [Cortex-M4NS]
+2024-10-06 19:46:05,569 [INFO] ImportTextPane:205 - (OptionalMessage_ERROR) IP (RCC) : Parameter (FLatency) has Id (AdvancedSettings) currently not set
+2024-10-06 19:46:05,569 [INFO] ImportTextPane:205 - (OptionalMessage_ERROR) IP (RCC) : Parameter (RTCHSEDivFreq_Value) has invalid value (4000000)
+2024-10-06 19:46:05,726 [INFO] UtilMem:75 - End LoadConfig() Used Memory: 663911584 Bytes (908066816)
+2024-10-06 19:46:05,760 [WARN] ThirdParty:833 - waiting for thirdparty lock release [change project]
+2024-10-06 19:46:05,760 [INFO] ThirdParty:835 - entering critical section [change project]
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USBPD 4.1
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7 3.3.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC9 1.0.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 6.0.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 2.0.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-MOTENVWB1 1.4.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-F4 1.1.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics LIBJPEG 8.0.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SMBUS 2.1.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-WB05N 1.1.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 3.0.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TCPP 4.1.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ISPU 2.1.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-FREERTOS 1.2.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-IPS 3.0.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-WB 2.0.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 7.0.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-F7 1.1.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-L5 2.0.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 2.0.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC6 3.1.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-STBOX1 2.0.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 11.0.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FreeRTOS 0.0.1
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-G0 1.1.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SAFEA1 1.2.2
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 3.0.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-DPower 1.2.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SUBG2 5.0.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics STM32_WPAN 1.0.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :EmbeddedOffice I-CUBE-FS-RTOS 1.0.1
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.0.3
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-FLIGHT1 5.0.2
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :Cesanta I-CUBE-Mongoose 7.13.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 1.0.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 9.0.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-G4 2.0.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.1.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.3.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-DISPLAY 3.0.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :RealThread X-CUBE-RT-Thread_Nano 4.1.1
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 7.0.0
+2024-10-06 19:46:05,760 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-SIGFOX1 3.2.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC10 1.0.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfSSL 5.7.2
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ISPU 2.0.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-EEPRMA1 5.1.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics HAL Drivers 0.0.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.16.2
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALS 1.0.2
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :emotas I-CUBE-CANOPEN 1.3.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 10.0.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC7 1.0.1
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.14.1
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.24.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :ITTIA_DB I-CUBE-ITTIADB 8.9.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfTPM 3.2.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.24.1
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :portGmbH I-Cube-SoM-uGOAL 1.1.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLEMGR 3.1.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics ThreadX 1.0.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-SMARTAG2 1.2.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-WL 2.0.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :SEGGER I-CUBE-embOS 1.3.1
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALGOBUILD 1.4.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-MOTENV1 5.0.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 1.0.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7RS 1.0.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfMQTT 1.19.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-L4 2.0.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics ThreadX 0.0.2
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :WES I-CUBE-Cesium 1.3.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-ASTRA1 2.0.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.1.2
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SFXS2LP1 4.0.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE2 3.3.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOF1 3.4.2
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 9.1.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :Infineon AIROC-Wi-Fi-Bluetooth-STM32 1.6.1
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.2.0
+2024-10-06 19:46:05,761 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfSSH 1.4.17
+2024-10-06 19:46:05,761 [INFO] ThirdParty:841 - exiting critical section [change project]
+2024-10-06 19:46:05,817 [INFO] PinOutPanel:1561 - setPackage(No Configuration,No Configuration)
+2024-10-06 19:46:05,818 [INFO] PinOutPanel:1561 - setPackage(STM32F411RETx,LQFP64)
+2024-10-06 19:46:05,971 [INFO] UtilMem:75 - Before build in PCC Used Memory: 341266832 Bytes (908066816)
+2024-10-06 19:46:06,068 [INFO] UtilMem:75 - After build in PCC Used Memory: 383742368 Bytes (908066816)
+2024-10-06 19:46:06,070 [INFO] ApiDbMcu:508 - Load IP Config File for FREERTOS
+2024-10-06 19:46:06,081 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,081 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,081 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,081 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,081 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,081 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,081 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,081 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,082 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,082 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,082 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,082 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,082 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,082 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,082 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,082 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,082 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,082 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,082 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,082 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,082 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,082 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,082 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,082 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,082 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,082 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,082 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,084 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,084 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,084 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,084 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,084 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,084 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,084 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,084 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,084 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,084 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,084 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,084 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,084 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,084 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,084 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,084 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2024-10-06 19:46:06,086 [INFO] ApiDbMcu:508 - Load IP Config File for PDM2PCM
+2024-10-06 19:46:06,090 [WARN] FreeRTOS:1023 - Null or empty value: should not occur! (nothing added to the table)
+2024-10-06 19:46:06,117 [INFO] CADModel:165 - CPN selected for project levelSTM32F411RET6
+2024-10-06 19:46:06,117 [INFO] CADModel:114 - Register for checkConnection events
+2024-10-06 19:46:06,119 [INFO] RtosManager:697 - Active RTOS found at IOC load: FREERTOS [Cortex-M4NS]
+2024-10-06 19:46:06,176 [INFO] OpenFileManager:363 - Restore cursor
+2024-10-06 22:40:02,566 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2024-10-06 22:40:02,567 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
