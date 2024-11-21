@@ -1,10 +1,10 @@
-21:06:32 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
+19:53:37 **** Incremental Build of configuration Debug for project Midterm_MedicineBot ****
 make -j32 all 
 arm-none-eabi-size  Midterm_MedicineBot.elf 
    text	   data	    bss	    dec	    hex	filename
-  31576	    108	  21348	  53032	   cf28	Midterm_MedicineBot.elf
+  33336	    108	  21380	  54824	   d628	Midterm_MedicineBot.elf
 Finished building: default.size.stdout
  
 
-21:06:33 Build Finished. 0 errors, 0 warnings. (took 187ms)
+19:53:37 Build Finished. 0 errors, 0 warnings. (took 266ms)
 

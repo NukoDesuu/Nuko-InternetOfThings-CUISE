@@ -1,0 +1,600 @@
+19:44:41 **** Incremental Build of configuration Debug for project Test ****
+make -j32 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:68:1: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'ADC_HandleTypeDef'?
+   68 | TIM_HandleTypeDef htim1;
+      | ^~~~~~~~~~~~~~~~~
+      | ADC_HandleTypeDef
+../Core/Src/main.c:69:1: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'ADC_HandleTypeDef'?
+   69 | TIM_HandleTypeDef htim2;
+      | ^~~~~~~~~~~~~~~~~
+      | ADC_HandleTypeDef
+../Core/Src/main.c:70:1: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'ADC_HandleTypeDef'?
+   70 | TIM_HandleTypeDef htim3;
+      | ^~~~~~~~~~~~~~~~~
+      | ADC_HandleTypeDef
+../Core/Src/main.c:71:1: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'ADC_HandleTypeDef'?
+   71 | TIM_HandleTypeDef htim4;
+      | ^~~~~~~~~~~~~~~~~
+      | ADC_HandleTypeDef
+../Core/Src/main.c: In function 'delay_us':
+../Core/Src/main.c:185:9: warning: implicit declaration of function '__HAL_TIM_SET_COUNTER' [-Wimplicit-function-declaration]
+  185 |         __HAL_TIM_SET_COUNTER(&htim1,0);  // set the counter value a 0
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:186:16: warning: implicit declaration of function '__HAL_TIM_GET_COUNTER' [-Wimplicit-function-declaration]
+  186 |         while (__HAL_TIM_GET_COUNTER(&htim1) < us);  // wait for the counter to reach the us input in the parameter
+      |                ^~~~~~~~~~~~~~~~~~~~~
+In file included from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h:30,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32f4xx_hal_conf.h:275,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Core/Src/main.c: In function 'turn_sg90':
+../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:4238:41: warning: implicit declaration of function '__HAL_TIM_SET_COMPARE' [-Wimplicit-function-declaration]
+ 4238 | #define __HAL_TIM_SetCompare            __HAL_TIM_SET_COMPARE
+      |                                         ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:191:5: note: in expansion of macro '__HAL_TIM_SetCompare'
+  191 |     __HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_2, pwm);
+      |     ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:191:34: error: 'TIM_CHANNEL_2' undeclared (first use in this function); did you mean 'ADC_CHANNEL_2'?
+  191 |     __HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_2, pwm);
+      |                                  ^~~~~~~~~~~~~
+      |                                  ADC_CHANNEL_2
+../Core/Src/main.c:191:34: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:366:3: warning: implicit declaration of function '__HAL_RCC_AFIO_CLK_ENABLE'; did you mean 'HAL_RCC_MODULE_ENABLED'? [-Wimplicit-function-declaration]
+  366 |   __HAL_RCC_AFIO_CLK_ENABLE();
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |   HAL_RCC_MODULE_ENABLED
+../Core/Src/main.c:367:3: warning: implicit declaration of function '__HAL_AFIO_REMAP_SWJ_NONJTRST' [-Wimplicit-function-declaration]
+  367 |   __HAL_AFIO_REMAP_SWJ_NONJTRST();
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:368:3: error: 'AFIO_MAPR_SWJ_CFG_JTAGDISABLE_Pos' undeclared (first use in this function)
+  368 |   AFIO_MAPR_SWJ_CFG_JTAGDISABLE_Pos;
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:380:9: warning: implicit declaration of function 'HAL_TIM_Base_Start'; did you mean 'HAL_DMA_Start'? [-Wimplicit-function-declaration]
+  380 |         HAL_TIM_Base_Start(&htim1);
+      |         ^~~~~~~~~~~~~~~~~~
+      |         HAL_DMA_Start
+../Core/Src/main.c:385:3: warning: implicit declaration of function 'HAL_TIM_Encoder_Start' [-Wimplicit-function-declaration]
+  385 |   HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_1);
+      |   ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:385:33: error: 'TIM_CHANNEL_1' undeclared (first use in this function); did you mean 'ADC_CHANNEL_1'?
+  385 |   HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_1);
+      |                                 ^~~~~~~~~~~~~
+      |                                 ADC_CHANNEL_1
+../Core/Src/main.c:386:39: error: 'TIM_CHANNEL_2' undeclared (first use in this function); did you mean 'ADC_CHANNEL_2'?
+  386 |         HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_2);
+      |                                       ^~~~~~~~~~~~~
+      |                                       ADC_CHANNEL_2
+../Core/Src/main.c:387:3: warning: implicit declaration of function 'HAL_TIM_PWM_Start'; did you mean 'HAL_DMA_Start'? [-Wimplicit-function-declaration]
+  387 |   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+      |   ^~~~~~~~~~~~~~~~~
+      |   HAL_DMA_Start
+../Core/Src/main.c: In function 'SystemClock_Config':
+../Core/Src/main.c:421:20: error: 'RCC_OscInitTypeDef' has no member named 'HSEPredivValue'
+  421 |   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
+      |                    ^
+../Core/Src/main.c:421:38: error: 'RCC_HSE_PREDIV_DIV1' undeclared (first use in this function)
+  421 |   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
+      |                                      ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:425:25: error: 'RCC_PLLInitTypeDef' has no member named 'PLLMUL'; did you mean 'PLLM'?
+  425 |   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
+      |                         ^~~~~~
+      |                         PLLM
+../Core/Src/main.c:425:34: error: 'RCC_PLL_MUL9' undeclared (first use in this function); did you mean 'RCC_PLLMUL_8'?
+  425 |   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
+      |                                  ^~~~~~~~~~~~
+      |                                  RCC_PLLMUL_8
+../Core/Src/main.c:444:40: error: 'RCC_PERIPHCLK_ADC' undeclared (first use in this function); did you mean 'RCC_PERIPHCLK_RTC'?
+  444 |   PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_ADC;
+      |                                        ^~~~~~~~~~~~~~~~~
+      |                                        RCC_PERIPHCLK_RTC
+../Core/Src/main.c:445:17: error: 'RCC_PeriphCLKInitTypeDef' has no member named 'AdcClockSelection'; did you mean 'RTCClockSelection'?
+  445 |   PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV6;
+      |                 ^~~~~~~~~~~~~~~~~
+      |                 RTCClockSelection
+../Core/Src/main.c:445:37: error: 'RCC_ADCPCLK2_DIV6' undeclared (first use in this function); did you mean 'RCC_SYSCLK_DIV2'?
+  445 |   PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV6;
+      |                                     ^~~~~~~~~~~~~~~~~
+      |                                     RCC_SYSCLK_DIV2
+../Core/Src/main.c: In function 'MX_ADC1_Init':
+../Core/Src/main.c:473:29: error: 'ADC_SCAN_ENABLE' undeclared (first use in this function); did you mean 'ADC_IS_ENABLE'?
+  473 |   hadc1.Init.ScanConvMode = ADC_SCAN_ENABLE;
+      |                             ^~~~~~~~~~~~~~~
+      |                             ADC_IS_ENABLE
+../Core/Src/main.c:487:18: error: 'ADC_REGULAR_RANK_1' undeclared (first use in this function); did you mean 'IS_ADC_REGULAR_RANK'?
+  487 |   sConfig.Rank = ADC_REGULAR_RANK_1;
+      |                  ^~~~~~~~~~~~~~~~~~
+      |                  IS_ADC_REGULAR_RANK
+../Core/Src/main.c:488:26: error: 'ADC_SAMPLETIME_239CYCLES_5' undeclared (first use in this function); did you mean 'ADC_SAMPLETIME_2CYCLE_5'?
+  488 |   sConfig.SamplingTime = ADC_SAMPLETIME_239CYCLES_5;
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                          ADC_SAMPLETIME_2CYCLE_5
+../Core/Src/main.c:497:18: error: 'ADC_REGULAR_RANK_2' undeclared (first use in this function); did you mean 'IS_ADC_REGULAR_RANK'?
+  497 |   sConfig.Rank = ADC_REGULAR_RANK_2;
+      |                  ^~~~~~~~~~~~~~~~~~
+      |                  IS_ADC_REGULAR_RANK
+../Core/Src/main.c:506:18: error: 'ADC_REGULAR_RANK_3' undeclared (first use in this function); did you mean 'IS_ADC_REGULAR_RANK'?
+  506 |   sConfig.Rank = ADC_REGULAR_RANK_3;
+      |                  ^~~~~~~~~~~~~~~~~~
+      |                  IS_ADC_REGULAR_RANK
+../Core/Src/main.c:515:18: error: 'ADC_REGULAR_RANK_4' undeclared (first use in this function); did you mean 'IS_ADC_REGULAR_RANK'?
+  515 |   sConfig.Rank = ADC_REGULAR_RANK_4;
+      |                  ^~~~~~~~~~~~~~~~~~
+      |                  IS_ADC_REGULAR_RANK
+../Core/Src/main.c:524:18: error: 'ADC_REGULAR_RANK_5' undeclared (first use in this function); did you mean 'IS_ADC_REGULAR_RANK'?
+  524 |   sConfig.Rank = ADC_REGULAR_RANK_5;
+      |                  ^~~~~~~~~~~~~~~~~~
+      |                  IS_ADC_REGULAR_RANK
+../Core/Src/main.c: In function 'MX_TIM1_Init':
+../Core/Src/main.c:547:3: error: unknown type name 'TIM_ClockConfigTypeDef'; did you mean 'EXTI_ConfigTypeDef'?
+  547 |   TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+      |   ^~~~~~~~~~~~~~~~~~~~~~
+      |   EXTI_ConfigTypeDef
+../Core/Src/main.c:548:3: error: unknown type name 'TIM_MasterConfigTypeDef'
+  548 |   TIM_MasterConfigTypeDef sMasterConfig = {0};
+      |   ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:549:3: error: unknown type name 'TIM_OC_InitTypeDef'; did you mean 'ADC_InitTypeDef'?
+  549 |   TIM_OC_InitTypeDef sConfigOC = {0};
+      |   ^~~~~~~~~~~~~~~~~~
+      |   ADC_InitTypeDef
+../Core/Src/main.c:550:3: error: unknown type name 'TIM_BreakDeadTimeConfigTypeDef'
+  550 |   TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig = {0};
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:555:8: error: request for member 'Instance' in something not a structure or union
+  555 |   htim1.Instance = TIM1;
+      |        ^
+../Core/Src/main.c:556:8: error: request for member 'Init' in something not a structure or union
+  556 |   htim1.Init.Prescaler = 71;
+      |        ^
+../Core/Src/main.c:557:8: error: request for member 'Init' in something not a structure or union
+  557 |   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
+      |        ^
+../Core/Src/main.c:557:28: error: 'TIM_COUNTERMODE_UP' undeclared (first use in this function)
+  557 |   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
+      |                            ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:558:8: error: request for member 'Init' in something not a structure or union
+  558 |   htim1.Init.Period = 99;
+      |        ^
+../Core/Src/main.c:559:8: error: request for member 'Init' in something not a structure or union
+  559 |   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+      |        ^
+../Core/Src/main.c:559:30: error: 'TIM_CLOCKDIVISION_DIV1' undeclared (first use in this function)
+  559 |   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:560:8: error: request for member 'Init' in something not a structure or union
+  560 |   htim1.Init.RepetitionCounter = 0;
+      |        ^
+../Core/Src/main.c:561:8: error: request for member 'Init' in something not a structure or union
+  561 |   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+      |        ^
+../Core/Src/main.c:561:34: error: 'TIM_AUTORELOAD_PRELOAD_DISABLE' undeclared (first use in this function)
+  561 |   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:562:7: warning: implicit declaration of function 'HAL_TIM_Base_Init' [-Wimplicit-function-declaration]
+  562 |   if (HAL_TIM_Base_Init(&htim1) != HAL_OK)
+      |       ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:566:21: error: request for member 'ClockSource' in something not a structure or union
+  566 |   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+      |                     ^
+../Core/Src/main.c:566:36: error: 'TIM_CLOCKSOURCE_INTERNAL' undeclared (first use in this function)
+  566 |   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:567:7: warning: implicit declaration of function 'HAL_TIM_ConfigClockSource' [-Wimplicit-function-declaration]
+  567 |   if (HAL_TIM_ConfigClockSource(&htim1, &sClockSourceConfig) != HAL_OK)
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:571:7: warning: implicit declaration of function 'HAL_TIM_PWM_Init'; did you mean 'HAL_LIN_Init'? [-Wimplicit-function-declaration]
+  571 |   if (HAL_TIM_PWM_Init(&htim1) != HAL_OK)
+      |       ^~~~~~~~~~~~~~~~
+      |       HAL_LIN_Init
+../Core/Src/main.c:575:16: error: request for member 'MasterOutputTrigger' in something not a structure or union
+  575 |   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+      |                ^
+../Core/Src/main.c:575:39: error: 'TIM_TRGO_RESET' undeclared (first use in this function)
+  575 |   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+      |                                       ^~~~~~~~~~~~~~
+../Core/Src/main.c:576:16: error: request for member 'MasterSlaveMode' in something not a structure or union
+  576 |   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+      |                ^
+../Core/Src/main.c:576:35: error: 'TIM_MASTERSLAVEMODE_DISABLE' undeclared (first use in this function)
+  576 |   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:577:7: warning: implicit declaration of function 'HAL_TIMEx_MasterConfigSynchronization'; did you mean 'HAL_TIM_SlaveConfigSynchronization'? [-Wimplicit-function-declaration]
+  577 |   if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK)
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |       HAL_TIM_SlaveConfigSynchronization
+../Core/Src/main.c:581:12: error: request for member 'OCMode' in something not a structure or union
+  581 |   sConfigOC.OCMode = TIM_OCMODE_PWM1;
+      |            ^
+../Core/Src/main.c:581:22: error: 'TIM_OCMODE_PWM1' undeclared (first use in this function)
+  581 |   sConfigOC.OCMode = TIM_OCMODE_PWM1;
+      |                      ^~~~~~~~~~~~~~~
+../Core/Src/main.c:582:12: error: request for member 'Pulse' in something not a structure or union
+  582 |   sConfigOC.Pulse = 0;
+      |            ^
+../Core/Src/main.c:583:12: error: request for member 'OCPolarity' in something not a structure or union
+  583 |   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+      |            ^
+../Core/Src/main.c:583:26: error: 'TIM_OCPOLARITY_HIGH' undeclared (first use in this function)
+  583 |   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+      |                          ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:584:12: error: request for member 'OCNPolarity' in something not a structure or union
+  584 |   sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;
+      |            ^
+../Core/Src/main.c:584:27: error: 'TIM_OCNPOLARITY_HIGH' undeclared (first use in this function)
+  584 |   sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;
+      |                           ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:585:12: error: request for member 'OCFastMode' in something not a structure or union
+  585 |   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+      |            ^
+../Core/Src/main.c:585:26: error: 'TIM_OCFAST_DISABLE' undeclared (first use in this function)
+  585 |   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+      |                          ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:586:12: error: request for member 'OCIdleState' in something not a structure or union
+  586 |   sConfigOC.OCIdleState = TIM_OCIDLESTATE_RESET;
+      |            ^
+../Core/Src/main.c:586:27: error: 'TIM_OCIDLESTATE_RESET' undeclared (first use in this function)
+  586 |   sConfigOC.OCIdleState = TIM_OCIDLESTATE_RESET;
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:587:12: error: request for member 'OCNIdleState' in something not a structure or union
+  587 |   sConfigOC.OCNIdleState = TIM_OCNIDLESTATE_RESET;
+      |            ^
+../Core/Src/main.c:587:28: error: 'TIM_OCNIDLESTATE_RESET' undeclared (first use in this function)
+  587 |   sConfigOC.OCNIdleState = TIM_OCNIDLESTATE_RESET;
+      |                            ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:588:7: warning: implicit declaration of function 'HAL_TIM_PWM_ConfigChannel'; did you mean 'HAL_ADC_ConfigChannel'? [-Wimplicit-function-declaration]
+  588 |   if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |       HAL_ADC_ConfigChannel
+../Core/Src/main.c:588:53: error: 'TIM_CHANNEL_1' undeclared (first use in this function); did you mean 'ADC_CHANNEL_1'?
+  588 |   if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+      |                                                     ^~~~~~~~~~~~~
+      |                                                     ADC_CHANNEL_1
+../Core/Src/main.c:592:53: error: 'TIM_CHANNEL_2' undeclared (first use in this function); did you mean 'ADC_CHANNEL_2'?
+  592 |   if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
+      |                                                     ^~~~~~~~~~~~~
+      |                                                     ADC_CHANNEL_2
+../Core/Src/main.c:596:23: error: request for member 'OffStateRunMode' in something not a structure or union
+  596 |   sBreakDeadTimeConfig.OffStateRunMode = TIM_OSSR_DISABLE;
+      |                       ^
+../Core/Src/main.c:596:42: error: 'TIM_OSSR_DISABLE' undeclared (first use in this function)
+  596 |   sBreakDeadTimeConfig.OffStateRunMode = TIM_OSSR_DISABLE;
+      |                                          ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:597:23: error: request for member 'OffStateIDLEMode' in something not a structure or union
+  597 |   sBreakDeadTimeConfig.OffStateIDLEMode = TIM_OSSI_DISABLE;
+      |                       ^
+../Core/Src/main.c:597:43: error: 'TIM_OSSI_DISABLE' undeclared (first use in this function)
+  597 |   sBreakDeadTimeConfig.OffStateIDLEMode = TIM_OSSI_DISABLE;
+      |                                           ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:598:23: error: request for member 'LockLevel' in something not a structure or union
+  598 |   sBreakDeadTimeConfig.LockLevel = TIM_LOCKLEVEL_OFF;
+      |                       ^
+../Core/Src/main.c:598:36: error: 'TIM_LOCKLEVEL_OFF' undeclared (first use in this function)
+  598 |   sBreakDeadTimeConfig.LockLevel = TIM_LOCKLEVEL_OFF;
+      |                                    ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:599:23: error: request for member 'DeadTime' in something not a structure or union
+  599 |   sBreakDeadTimeConfig.DeadTime = 0;
+      |                       ^
+../Core/Src/main.c:600:23: error: request for member 'BreakState' in something not a structure or union
+  600 |   sBreakDeadTimeConfig.BreakState = TIM_BREAK_DISABLE;
+      |                       ^
+../Core/Src/main.c:600:37: error: 'TIM_BREAK_DISABLE' undeclared (first use in this function)
+  600 |   sBreakDeadTimeConfig.BreakState = TIM_BREAK_DISABLE;
+      |                                     ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:601:23: error: request for member 'BreakPolarity' in something not a structure or union
+  601 |   sBreakDeadTimeConfig.BreakPolarity = TIM_BREAKPOLARITY_HIGH;
+      |                       ^
+../Core/Src/main.c:601:40: error: 'TIM_BREAKPOLARITY_HIGH' undeclared (first use in this function)
+  601 |   sBreakDeadTimeConfig.BreakPolarity = TIM_BREAKPOLARITY_HIGH;
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:602:23: error: request for member 'AutomaticOutput' in something not a structure or union
+  602 |   sBreakDeadTimeConfig.AutomaticOutput = TIM_AUTOMATICOUTPUT_DISABLE;
+      |                       ^
+../Core/Src/main.c:602:42: error: 'TIM_AUTOMATICOUTPUT_DISABLE' undeclared (first use in this function)
+  602 |   sBreakDeadTimeConfig.AutomaticOutput = TIM_AUTOMATICOUTPUT_DISABLE;
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:603:7: warning: implicit declaration of function 'HAL_TIMEx_ConfigBreakDeadTime' [-Wimplicit-function-declaration]
+  603 |   if (HAL_TIMEx_ConfigBreakDeadTime(&htim1, &sBreakDeadTimeConfig) != HAL_OK)
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:610:3: warning: implicit declaration of function 'HAL_TIM_MspPostInit'; did you mean 'HAL_ADC_MspDeInit'? [-Wimplicit-function-declaration]
+  610 |   HAL_TIM_MspPostInit(&htim1);
+      |   ^~~~~~~~~~~~~~~~~~~
+      |   HAL_ADC_MspDeInit
+../Core/Src/main.c: In function 'MX_TIM2_Init':
+../Core/Src/main.c:626:3: error: unknown type name 'TIM_Encoder_InitTypeDef'
+  626 |   TIM_Encoder_InitTypeDef sConfig = {0};
+      |   ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:627:3: error: unknown type name 'TIM_MasterConfigTypeDef'
+  627 |   TIM_MasterConfigTypeDef sMasterConfig = {0};
+      |   ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:632:8: error: request for member 'Instance' in something not a structure or union
+  632 |   htim2.Instance = TIM2;
+      |        ^
+../Core/Src/main.c:633:8: error: request for member 'Init' in something not a structure or union
+  633 |   htim2.Init.Prescaler = 0;
+      |        ^
+../Core/Src/main.c:634:8: error: request for member 'Init' in something not a structure or union
+  634 |   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+      |        ^
+../Core/Src/main.c:634:28: error: 'TIM_COUNTERMODE_UP' undeclared (first use in this function)
+  634 |   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+      |                            ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:635:8: error: request for member 'Init' in something not a structure or union
+  635 |   htim2.Init.Period = 65535;
+      |        ^
+../Core/Src/main.c:636:8: error: request for member 'Init' in something not a structure or union
+  636 |   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+      |        ^
+../Core/Src/main.c:636:30: error: 'TIM_CLOCKDIVISION_DIV1' undeclared (first use in this function)
+  636 |   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:637:8: error: request for member 'Init' in something not a structure or union
+  637 |   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+      |        ^
+../Core/Src/main.c:637:34: error: 'TIM_AUTORELOAD_PRELOAD_DISABLE' undeclared (first use in this function)
+  637 |   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:638:10: error: request for member 'EncoderMode' in something not a structure or union
+  638 |   sConfig.EncoderMode = TIM_ENCODERMODE_TI12;
+      |          ^
+../Core/Src/main.c:638:25: error: 'TIM_ENCODERMODE_TI12' undeclared (first use in this function)
+  638 |   sConfig.EncoderMode = TIM_ENCODERMODE_TI12;
+      |                         ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:639:10: error: request for member 'IC1Polarity' in something not a structure or union
+  639 |   sConfig.IC1Polarity = TIM_ICPOLARITY_RISING;
+      |          ^
+../Core/Src/main.c:639:25: error: 'TIM_ICPOLARITY_RISING' undeclared (first use in this function)
+  639 |   sConfig.IC1Polarity = TIM_ICPOLARITY_RISING;
+      |                         ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:640:10: error: request for member 'IC1Selection' in something not a structure or union
+  640 |   sConfig.IC1Selection = TIM_ICSELECTION_DIRECTTI;
+      |          ^
+../Core/Src/main.c:640:26: error: 'TIM_ICSELECTION_DIRECTTI' undeclared (first use in this function)
+  640 |   sConfig.IC1Selection = TIM_ICSELECTION_DIRECTTI;
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:641:10: error: request for member 'IC1Prescaler' in something not a structure or union
+  641 |   sConfig.IC1Prescaler = TIM_ICPSC_DIV1;
+      |          ^
+../Core/Src/main.c:641:26: error: 'TIM_ICPSC_DIV1' undeclared (first use in this function)
+  641 |   sConfig.IC1Prescaler = TIM_ICPSC_DIV1;
+      |                          ^~~~~~~~~~~~~~
+../Core/Src/main.c:642:10: error: request for member 'IC1Filter' in something not a structure or union
+  642 |   sConfig.IC1Filter = 0;
+      |          ^
+../Core/Src/main.c:643:10: error: request for member 'IC2Polarity' in something not a structure or union
+  643 |   sConfig.IC2Polarity = TIM_ICPOLARITY_RISING;
+      |          ^
+../Core/Src/main.c:644:10: error: request for member 'IC2Selection' in something not a structure or union
+  644 |   sConfig.IC2Selection = TIM_ICSELECTION_DIRECTTI;
+      |          ^
+../Core/Src/main.c:645:10: error: request for member 'IC2Prescaler' in something not a structure or union
+  645 |   sConfig.IC2Prescaler = TIM_ICPSC_DIV1;
+      |          ^
+../Core/Src/main.c:646:10: error: request for member 'IC2Filter' in something not a structure or union
+  646 |   sConfig.IC2Filter = 0;
+      |          ^
+../Core/Src/main.c:647:7: warning: implicit declaration of function 'HAL_TIM_Encoder_Init' [-Wimplicit-function-declaration]
+  647 |   if (HAL_TIM_Encoder_Init(&htim2, &sConfig) != HAL_OK)
+      |       ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:651:16: error: request for member 'MasterOutputTrigger' in something not a structure or union
+  651 |   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+      |                ^
+../Core/Src/main.c:651:39: error: 'TIM_TRGO_RESET' undeclared (first use in this function)
+  651 |   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+      |                                       ^~~~~~~~~~~~~~
+../Core/Src/main.c:652:16: error: request for member 'MasterSlaveMode' in something not a structure or union
+  652 |   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+      |                ^
+../Core/Src/main.c:652:35: error: 'TIM_MASTERSLAVEMODE_DISABLE' undeclared (first use in this function)
+  652 |   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'MX_TIM3_Init':
+../Core/Src/main.c:675:3: error: unknown type name 'TIM_ClockConfigTypeDef'; did you mean 'EXTI_ConfigTypeDef'?
+  675 |   TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+      |   ^~~~~~~~~~~~~~~~~~~~~~
+      |   EXTI_ConfigTypeDef
+../Core/Src/main.c:676:3: error: unknown type name 'TIM_MasterConfigTypeDef'
+  676 |   TIM_MasterConfigTypeDef sMasterConfig = {0};
+      |   ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:677:3: error: unknown type name 'TIM_OC_InitTypeDef'; did you mean 'ADC_InitTypeDef'?
+  677 |   TIM_OC_InitTypeDef sConfigOC = {0};
+      |   ^~~~~~~~~~~~~~~~~~
+      |   ADC_InitTypeDef
+../Core/Src/main.c:682:8: error: request for member 'Instance' in something not a structure or union
+  682 |   htim3.Instance = TIM3;
+      |        ^
+../Core/Src/main.c:683:8: error: request for member 'Init' in something not a structure or union
+  683 |   htim3.Init.Prescaler = 7199;
+      |        ^
+../Core/Src/main.c:684:8: error: request for member 'Init' in something not a structure or union
+  684 |   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
+      |        ^
+../Core/Src/main.c:684:28: error: 'TIM_COUNTERMODE_UP' undeclared (first use in this function)
+  684 |   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
+      |                            ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:685:8: error: request for member 'Init' in something not a structure or union
+  685 |   htim3.Init.Period = 199;
+      |        ^
+../Core/Src/main.c:686:8: error: request for member 'Init' in something not a structure or union
+  686 |   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+      |        ^
+../Core/Src/main.c:686:30: error: 'TIM_CLOCKDIVISION_DIV1' undeclared (first use in this function)
+  686 |   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:687:8: error: request for member 'Init' in something not a structure or union
+  687 |   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+      |        ^
+../Core/Src/main.c:687:34: error: 'TIM_AUTORELOAD_PRELOAD_DISABLE' undeclared (first use in this function)
+  687 |   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:692:21: error: request for member 'ClockSource' in something not a structure or union
+  692 |   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+      |                     ^
+../Core/Src/main.c:692:36: error: 'TIM_CLOCKSOURCE_INTERNAL' undeclared (first use in this function)
+  692 |   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:701:16: error: request for member 'MasterOutputTrigger' in something not a structure or union
+  701 |   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+      |                ^
+../Core/Src/main.c:701:39: error: 'TIM_TRGO_RESET' undeclared (first use in this function)
+  701 |   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+      |                                       ^~~~~~~~~~~~~~
+../Core/Src/main.c:702:16: error: request for member 'MasterSlaveMode' in something not a structure or union
+  702 |   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+      |                ^
+../Core/Src/main.c:702:35: error: 'TIM_MASTERSLAVEMODE_DISABLE' undeclared (first use in this function)
+  702 |   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:707:12: error: request for member 'OCMode' in something not a structure or union
+  707 |   sConfigOC.OCMode = TIM_OCMODE_PWM1;
+      |            ^
+../Core/Src/main.c:707:22: error: 'TIM_OCMODE_PWM1' undeclared (first use in this function)
+  707 |   sConfigOC.OCMode = TIM_OCMODE_PWM1;
+      |                      ^~~~~~~~~~~~~~~
+../Core/Src/main.c:708:12: error: request for member 'Pulse' in something not a structure or union
+  708 |   sConfigOC.Pulse = 0;
+      |            ^
+../Core/Src/main.c:709:12: error: request for member 'OCPolarity' in something not a structure or union
+  709 |   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+      |            ^
+../Core/Src/main.c:709:26: error: 'TIM_OCPOLARITY_HIGH' undeclared (first use in this function)
+  709 |   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+      |                          ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:710:12: error: request for member 'OCFastMode' in something not a structure or union
+  710 |   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+      |            ^
+../Core/Src/main.c:710:26: error: 'TIM_OCFAST_DISABLE' undeclared (first use in this function)
+  710 |   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+      |                          ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:711:53: error: 'TIM_CHANNEL_2' undeclared (first use in this function); did you mean 'ADC_CHANNEL_2'?
+  711 |   if (HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
+      |                                                     ^~~~~~~~~~~~~
+      |                                                     ADC_CHANNEL_2
+../Core/Src/main.c: In function 'MX_TIM4_Init':
+../Core/Src/main.c:734:3: error: unknown type name 'TIM_ClockConfigTypeDef'; did you mean 'EXTI_ConfigTypeDef'?
+  734 |   TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+      |   ^~~~~~~~~~~~~~~~~~~~~~
+      |   EXTI_ConfigTypeDef
+../Core/Src/main.c:735:3: error: unknown type name 'TIM_MasterConfigTypeDef'
+  735 |   TIM_MasterConfigTypeDef sMasterConfig = {0};
+      |   ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:740:8: error: request for member 'Instance' in something not a structure or union
+  740 |   htim4.Instance = TIM4;
+      |        ^
+../Core/Src/main.c:741:8: error: request for member 'Init' in something not a structure or union
+  741 |   htim4.Init.Prescaler = 71;
+      |        ^
+../Core/Src/main.c:742:8: error: request for member 'Init' in something not a structure or union
+  742 |   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
+      |        ^
+../Core/Src/main.c:742:28: error: 'TIM_COUNTERMODE_UP' undeclared (first use in this function)
+  742 |   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
+      |                            ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:743:8: error: request for member 'Init' in something not a structure or union
+  743 |   htim4.Init.Period = 65535;
+      |        ^
+../Core/Src/main.c:744:8: error: request for member 'Init' in something not a structure or union
+  744 |   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+      |        ^
+../Core/Src/main.c:744:30: error: 'TIM_CLOCKDIVISION_DIV1' undeclared (first use in this function)
+  744 |   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:745:8: error: request for member 'Init' in something not a structure or union
+  745 |   htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+      |        ^
+../Core/Src/main.c:745:34: error: 'TIM_AUTORELOAD_PRELOAD_DISABLE' undeclared (first use in this function)
+  745 |   htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:750:21: error: request for member 'ClockSource' in something not a structure or union
+  750 |   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+      |                     ^
+../Core/Src/main.c:750:36: error: 'TIM_CLOCKSOURCE_INTERNAL' undeclared (first use in this function)
+  750 |   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:755:16: error: request for member 'MasterOutputTrigger' in something not a structure or union
+  755 |   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+      |                ^
+../Core/Src/main.c:755:39: error: 'TIM_TRGO_RESET' undeclared (first use in this function)
+  755 |   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+      |                                       ^~~~~~~~~~~~~~
+../Core/Src/main.c:756:16: error: request for member 'MasterSlaveMode' in something not a structure or union
+  756 |   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+      |                ^
+../Core/Src/main.c:756:35: error: 'TIM_MASTERSLAVEMODE_DISABLE' undeclared (first use in this function)
+  756 |   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'MX_DMA_Init':
+../Core/Src/main.c:778:24: error: 'DMA1_Channel1_IRQn' undeclared (first use in this function)
+  778 |   HAL_NVIC_SetPriority(DMA1_Channel1_IRQn, 0, 0);
+      |                        ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'MX_GPIO_Init':
+../Core/Src/main.c:802:28: error: 'Trig_Pin' undeclared (first use in this function)
+  802 |   HAL_GPIO_WritePin(GPIOB, Trig_Pin|BIN_1_Pin|BIN_2_Pin|GPIO_PIN_6
+      |                            ^~~~~~~~
+../Core/Src/main.c:802:37: error: 'BIN_1_Pin' undeclared (first use in this function); did you mean 'B1_Pin'?
+  802 |   HAL_GPIO_WritePin(GPIOB, Trig_Pin|BIN_1_Pin|BIN_2_Pin|GPIO_PIN_6
+      |                                     ^~~~~~~~~
+      |                                     B1_Pin
+../Core/Src/main.c:802:47: error: 'BIN_2_Pin' undeclared (first use in this function)
+  802 |   HAL_GPIO_WritePin(GPIOB, Trig_Pin|BIN_1_Pin|BIN_2_Pin|GPIO_PIN_6
+      |                                               ^~~~~~~~~
+../Core/Src/main.c:806:52: error: 'AIN_2_Pin' undeclared (first use in this function)
+  806 |   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10|GPIO_PIN_11|AIN_2_Pin|AIN_1_Pin, GPIO_PIN_RESET);
+      |                                                    ^~~~~~~~~
+../Core/Src/main.c:806:62: error: 'AIN_1_Pin' undeclared (first use in this function)
+  806 |   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10|GPIO_PIN_11|AIN_2_Pin|AIN_1_Pin, GPIO_PIN_RESET);
+      |                                                              ^~~~~~~~~
+../Core/Src/main.c:816:25: error: 'M2_A_Pin' undeclared (first use in this function)
+  816 |   GPIO_InitStruct.Pin = M2_A_Pin;
+      |                         ^~~~~~~~
+../Core/Src/main.c:819:17: error: 'M2_A_GPIO_Port' undeclared (first use in this function); did you mean 'TCK_GPIO_Port'?
+  819 |   HAL_GPIO_Init(M2_A_GPIO_Port, &GPIO_InitStruct);
+      |                 ^~~~~~~~~~~~~~
+      |                 TCK_GPIO_Port
+../Core/Src/main.c:822:25: error: 'M2_B_Pin' undeclared (first use in this function)
+  822 |   GPIO_InitStruct.Pin = M2_B_Pin;
+      |                         ^~~~~~~~
+../Core/Src/main.c:825:17: error: 'M2_B_GPIO_Port' undeclared (first use in this function); did you mean 'TCK_GPIO_Port'?
+  825 |   HAL_GPIO_Init(M2_B_GPIO_Port, &GPIO_InitStruct);
+      |                 ^~~~~~~~~~~~~~
+      |                 TCK_GPIO_Port
+../Core/Src/main.c:828:25: error: 'Echo_Pin' undeclared (first use in this function)
+  828 |   GPIO_InitStruct.Pin = Echo_Pin;
+      |                         ^~~~~~~~
+../Core/Src/main.c:831:17: error: 'Echo_GPIO_Port' undeclared (first use in this function); did you mean 'TCK_GPIO_Port'?
+  831 |   HAL_GPIO_Init(Echo_GPIO_Port, &GPIO_InitStruct);
+      |                 ^~~~~~~~~~~~~~
+      |                 TCK_GPIO_Port
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:860:25: error: 'Echo_Pin' undeclared (first use in this function)
+  860 |         if (GPIO_Pin == Echo_Pin){
+      |                         ^~~~~~~~
+../Core/Src/main.c:861:38: error: 'Echo_GPIO_Port' undeclared (first use in this function); did you mean 'TCK_GPIO_Port'?
+  861 |                 if (HAL_GPIO_ReadPin(Echo_GPIO_Port, Echo_Pin) == 1){
+      |                                      ^~~~~~~~~~~~~~
+      |                                      TCK_GPIO_Port
+../Core/Src/main.c:868:25: error: 'M2_A_Pin' undeclared (first use in this function)
+  868 |         if (GPIO_Pin == M2_A_Pin){
+      |                         ^~~~~~~~
+../Core/Src/main.c:870:38: error: 'M2_B_GPIO_Port' undeclared (first use in this function); did you mean 'TCK_GPIO_Port'?
+  870 |                 if (HAL_GPIO_ReadPin(M2_B_GPIO_Port, M2_B_Pin) == 1){
+      |                                      ^~~~~~~~~~~~~~
+      |                                      TCK_GPIO_Port
+../Core/Src/main.c:870:54: error: 'M2_B_Pin' undeclared (first use in this function)
+  870 |                 if (HAL_GPIO_ReadPin(M2_B_GPIO_Port, M2_B_Pin) == 1){
+      |                                                      ^~~~~~~~
+../Core/Src/main.c: In function 'PID':
+../Core/Src/main.c:305:1: warning: control reaches end of non-void function [-Wreturn-type]
+  305 | }
+      | ^
+../Core/Src/main.c: In function 'Tracking_control':
+../Core/Src/main.c:320:1: warning: control reaches end of non-void function [-Wreturn-type]
+  320 | }
+      | ^
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j32 all" terminated with exit code 2. Build might be incomplete.
+
+19:44:42 Build Failed. 159 errors, 18 warnings. (took 1s.405ms)
+

@@ -19,6 +19,8 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
+#include <string.h>
+#include <stdio.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -41,6 +43,8 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+ADC_HandleTypeDef hadc1;
+
 TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
@@ -55,7 +59,10 @@ const osThreadAttr_t defaultTask_attributes = {
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* USER CODE BEGIN PV */
-int status = 0;
+volatile int status = 1;
+volatile int lineTrackerLeft_Found = 0;
+volatile int lineTrackerRight_Found = 0;
+
 // For ULTRASONIC SENSOR measurements
 #define TRIG_PIN GPIO_PIN_9
 #define TRIG_PORT GPIOA
@@ -64,11 +71,11 @@ int status = 0;
 uint32_t pMillis;
 uint32_t Value1 = 0;
 uint32_t Value2 = 0;
-uint16_t Distance  = 0;  // cm; //in a unit of cm
+volatile uint16_t Distance  = 0;  // cm; //in a unit of cm
 uint16_t currentDistance = 0;
 uint16_t distanceLimit = 10; //in a unit of cm
 // For LINE TRACKING sensor
-int l1, l2, l3, l4, l5;
+volatile uint16_t lineL, lineR;
 // For BUZZER melody
 uint32_t OctaveFourCMajor[8] = {262, 294, 330, 349, 392, 440, 493, 523};
 uint32_t OctaveFourCSharpMajor[8] = {277, 311, 349, 370, 415, 466, 523, 554};
@@ -76,6 +83,7 @@ uint32_t SingleMelody[1] = {415};
 uint32_t WarningMelody[1] = {349};
 uint32_t ExampleMelody[3] = {277, 349, 415};
 uint8_t NoteIndex = 0;
+
 // MULTITASKING handles
 osThreadId_t measureDistanceHandle;
 osThreadId_t detectLineHandle;
@@ -85,36 +93,89 @@ osThreadId_t blinkLEDHandle;
 static void measureDistance() {
 	// This function keeps running all the time
 	while (1) {
-	HAL_GPIO_WritePin(TRIG_PORT, TRIG_PIN, GPIO_PIN_SET);  // pull the TRIG pin HIGH
-	__HAL_TIM_SET_COUNTER(&htim1, 0);
-	while (__HAL_TIM_GET_COUNTER (&htim1) < 10);  // wait for 10 us
-	HAL_GPIO_WritePin(TRIG_PORT, TRIG_PIN, GPIO_PIN_RESET);  // pull the TRIG pin low
+		HAL_GPIO_WritePin(TRIG_PORT, TRIG_PIN, GPIO_PIN_SET);  // pull the TRIG pin HIGH
+		__HAL_TIM_SET_COUNTER(&htim1, 0);
+		while (__HAL_TIM_GET_COUNTER (&htim1) < 10);  // wait for 10 us
+		HAL_GPIO_WritePin(TRIG_PORT, TRIG_PIN, GPIO_PIN_RESET);  // pull the TRIG pin low
 
-	pMillis = HAL_GetTick(); // used this to avoid infinite while loop  (for timeout)
-	// wait for the echo pin to go high
-	while (!(HAL_GPIO_ReadPin (ECHO_PORT, ECHO_PIN)) && pMillis + 10 >  HAL_GetTick());
-	Value1 = __HAL_TIM_GET_COUNTER (&htim1);
+		pMillis = HAL_GetTick(); // used this to avoid infinite while loop  (for timeout)
+		// wait for the echo pin to go high
+		while (!(HAL_GPIO_ReadPin (ECHO_PORT, ECHO_PIN)) && pMillis + 10 >  HAL_GetTick());
+		Value1 = __HAL_TIM_GET_COUNTER (&htim1);
 
-	pMillis = HAL_GetTick(); // used this to avoid infinite while loop (for timeout)
-	// wait for the echo pin to go low
-	while ((HAL_GPIO_ReadPin (ECHO_PORT, ECHO_PIN)) && pMillis + 50 > HAL_GetTick());
-	Value2 = __HAL_TIM_GET_COUNTER (&htim1);
+		pMillis = HAL_GetTick(); // used this to avoid infinite while loop (for timeout)
+		// wait for the echo pin to go low
+		while ((HAL_GPIO_ReadPin (ECHO_PORT, ECHO_PIN)) && pMillis + 50 > HAL_GetTick());
+		Value2 = __HAL_TIM_GET_COUNTER (&htim1);
 
-	Distance = (Value2-Value1)* 0.034/2;
-	osDelay(10);
+		Distance = (Value2-Value1)* 0.034/2;
+		osDelay(10);
 	}
 }
-
 static void detectLine() {
-	// This function keeps running all the time
-	while (1) {
-		l1 = HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_6);
-		l2 = HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_7);
-		l3 = HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_8);
-		l4 = HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_9);
-		l5 = HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_10);
-		osDelay(5);
-	}
+    uint32_t lineL, lineR;
+    const uint32_t threshold = 300;  // Set threshold for black/white detection
+
+    while (1) {
+
+    	ADC_ChannelConfTypeDef sConfig = {0};
+    		  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+    		  */
+    		  sConfig.Channel = ADC_CHANNEL_14;
+    		  sConfig.Rank = 1;
+    		  //sConfig.SamplingTime = ADC_SAMPLETIME_28CYCLES;
+    		  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+    		  {
+    		    Error_Handler();
+    		  }
+	    	HAL_ADC_Start(&hadc1);
+
+	    	if (HAL_ADC_PollForConversion(&hadc1, 1000) == HAL_OK)
+	    	{
+	    		lineL = HAL_ADC_GetValue(&hadc1);
+	    	}
+
+	    	ADC_ChannelConfTypeDef sConfig2 = {0};
+	    		  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+	    		  */
+	    		  sConfig2.Channel = ADC_CHANNEL_15;
+	    		  sConfig2.Rank = 2;
+	    		  //sConfig.SamplngTime = ADC_SAMPLETIME_28CYCLES;
+	    		  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig2) != HAL_OK)
+	    		  {
+	    		    Error_Handler();
+	    		  }
+	    	HAL_ADC_Start(&hadc1);
+
+	    	// Poll for conversion for the second channel
+	    	if (HAL_ADC_PollForConversion(&hadc1, 1000) == HAL_OK)
+	    	{
+	    		lineR = HAL_ADC_GetValue(&hadc1);
+	    	}
+
+
+	    	lineTrackerLeft_Found = lineL;
+	    	lineTrackerRight_Found = lineR;
+//
+//        if (lineL < threshold && lineR >= threshold) {
+//        	lineTrackerLeft_Found = 0;
+//        	lineTrackerRight_Found = 1;
+//        }
+//        else if (lineR < threshold && lineL >= threshold) {
+//        	lineTrackerLeft_Found = 1;
+//        	lineTrackerRight_Found = 0;
+//        }
+//        else if (lineL >= threshold && lineR >= threshold) {
+//        	lineTrackerLeft_Found = 0;
+//        	lineTrackerRight_Found = 0;
+//        }
+//        else if (lineL < threshold && lineR < threshold) {
+//        	lineTrackerLeft_Found = 1;
+//        	lineTrackerRight_Found = 1;
+//        }
+
+        osDelay(5);
+    }
 }
 
 static void Tone(uint32_t Frequency, uint32_t Duration, int Volume) {
@@ -136,6 +197,7 @@ static void buzzerMelody() {
 			  noTone();
 			  osDelay(2000);
 			}
+			osDelay(1000);
 		}
 	}
 	else {
@@ -164,10 +226,11 @@ static void MX_USART2_UART_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_TIM2_Init(void);
+static void MX_ADC1_Init(void);
 void StartDefaultTask(void *argument);
 
 /* USER CODE BEGIN PFP */
-static void driveCar(float powerL, float powerR, int direction);
+void driveCar(float powerL, float powerR, int direction);
 static void Tone(uint32_t Frequency, uint32_t Duration, int Volume);
 static void noTone();
 static void detectLine();
@@ -175,7 +238,7 @@ static void detectLine();
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-static void driveCar(float powerL, float powerR, int direction) {
+void driveCar(float powerL, float powerR, int direction) {
 	//Change the DIRECTION of the car
 	switch (direction) {
 	case 0: //Reverse direction
@@ -230,13 +293,14 @@ int main(void)
   MX_TIM1_Init();
   MX_TIM3_Init();
   MX_TIM2_Init();
+  MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
   // Initialization for BUZZER
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1); //For BUZZER
   // Initialization for WHEEL MOTORS
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1); //For LEFT PWM
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2); //For RIGHT PWM
-  driveCar(80, 80, 1);
+  //driveCar(80, 80, 1);
   // Initialization for ULTRASONIC SENSOR
   HAL_TIM_Base_Start(&htim1);
   HAL_GPIO_WritePin(TRIG_PORT, TRIG_PIN, GPIO_PIN_RESET); //pulls TRIG pin to LOW
@@ -268,34 +332,34 @@ int main(void)
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
-  const osThreadAttr_t measureDistance_attributes = {
-		  .name = "measureDistance",
-		  .priority = (osPriority_t) osPriorityNormal,
-		  .stack_size = 128
-  };
+//  const osThreadAttr_t measureDistance_attributes = {
+//		  .name = "measureDistance",
+//		  .priority = (osPriority_t) osPriorityNormal,
+//		  .stack_size = 128
+//  };
 
-  const osThreadAttr_t detectLine_attributes = {
-		  .name = "detectLine",
-		  .priority = (osPriority_t) osPriorityNormal,
-		  .stack_size = 128
-  };
-
-  const osThreadAttr_t buzzerMelody_attributes = {
-		  .name = "buzzerMelody",
-		  .priority = (osPriority_t) osPriorityNormal,
-		  .stack_size = 128
-  };
-
-  const osThreadAttr_t blinkLED_attributes = {
-		  .name = "blinkLED",
-		  .priority = (osPriority_t) osPriorityNormal,
-		  .stack_size = 128
-  };
-
-  measureDistanceHandle = osThreadNew(measureDistance, NULL, &measureDistance_attributes);
-  detectLineHandle = osThreadNew(detectLine, NULL, &detectLine_attributes);
-  buzzerMelodyHandle = osThreadNew(buzzerMelody, NULL, &buzzerMelody_attributes);
-  blinkLEDHandle = osThreadNew(blinkLED, NULL, &blinkLED_attributes);
+//  const osThreadAttr_t detectLine_attributes = {
+//		  .name = "detectLine",
+//		  .priority = (osPriority_t) osPriorityNormal,
+//		  .stack_size = 128
+//  };
+//
+//  const osThreadAttr_t buzzerMelody_attributes = {
+//		  .name = "buzzerMelody",
+//		  .priority = (osPriority_t) osPriorityNormal,
+//		  .stack_size = 128
+//  };
+////
+//  const osThreadAttr_t blinkLED_attributes = {
+//		  .name = "blinkLED",
+//		  .priority = (osPriority_t) osPriorityNormal,
+//		  .stack_size = 128
+//  };
+//
+    //measureDistanceHandle = osThreadNew(measureDistance, NULL, &measureDistance_attributes);
+//    //detectLineHandle = osThreadNew(detectLine, NULL, &detectLine_attributes);
+//	  buzzerMelodyHandle = osThreadNew(buzzerMelody, NULL, &buzzerMelody_attributes);
+//	  blinkLEDHandle = osThreadNew(blinkLED, NULL, &blinkLED_attributes);
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */
@@ -309,8 +373,8 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
-  {
+  //while (1)
+  //{
 //	  HAL_Delay(50);
 //
 //	  detectLine();
@@ -320,7 +384,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-  }
+  //}
   /* USER CODE END 3 */
 }
 
@@ -367,6 +431,58 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+}
+
+/**
+  * @brief ADC1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_ADC1_Init(void)
+{
+
+  /* USER CODE BEGIN ADC1_Init 0 */
+
+  /* USER CODE END ADC1_Init 0 */
+
+  ADC_ChannelConfTypeDef sConfig = {0};
+
+  /* USER CODE BEGIN ADC1_Init 1 */
+
+  /* USER CODE END ADC1_Init 1 */
+
+  /** Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)
+  */
+  hadc1.Instance = ADC1;
+  hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
+  hadc1.Init.Resolution = ADC_RESOLUTION_12B;
+  hadc1.Init.ScanConvMode = ENABLE;
+  hadc1.Init.ContinuousConvMode = ENABLE;
+  hadc1.Init.DiscontinuousConvMode = DISABLE;
+  hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
+  hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+  hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+  hadc1.Init.NbrOfConversion = 1;
+  hadc1.Init.DMAContinuousRequests = DISABLE;
+  hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+  if (HAL_ADC_Init(&hadc1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+  */
+  sConfig.Channel = ADC_CHANNEL_14;
+  sConfig.Rank = 1;
+  sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN ADC1_Init 2 */
+
+  /* USER CODE END ADC1_Init 2 */
+
 }
 
 /**
@@ -629,14 +745,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(Green_Button_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : LineTracking_OUT1_Pin LineTracking_OUT2_Pin LineTracking_OUT3_Pin LineTracking_OUT4_Pin
-                           LineTracking_OUT5_Pin */
-  GPIO_InitStruct.Pin = LineTracking_OUT1_Pin|LineTracking_OUT2_Pin|LineTracking_OUT3_Pin|LineTracking_OUT4_Pin
-                          |LineTracking_OUT5_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
-
   /*Configure GPIO pin : Ultrasonic_Echo_Pin */
   GPIO_InitStruct.Pin = Ultrasonic_Echo_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
@@ -658,31 +766,175 @@ static void MX_GPIO_Init(void)
   * @retval None
   */
 /* USER CODE END Header_StartDefaultTask */
+
+
+void ADC_Select_CH14 (void)
+{
+	ADC_ChannelConfTypeDef sConfig = {0};
+	  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+	  */
+	  sConfig.Channel = ADC_CHANNEL_14;
+	  sConfig.Rank = 1;
+	  //sConfig.SamplingTime = ADC_SAMPLETIME_28CYCLES;
+	  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+	  {
+	    Error_Handler();
+	  }
+}
+
+void ADC_Select_CH15 (void)
+{
+	ADC_ChannelConfTypeDef sConfig = {0};
+	  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+	  */
+	  sConfig.Channel = ADC_CHANNEL_15;
+	  sConfig.Rank = 1;
+	  //sConfig.SamplingTime = ADC_SAMPLETIME_84CYCLES;
+	  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+	  {
+	    Error_Handler();
+	  }
+}
+
 void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN 5 */
-	driveCar(100, 100, 1);
+	//driveCar(100, 100, 1);
   /* Infinite loop */
   for(;;)
   {
-	  driveCar(100, 100, 1);
-	  sprintf(msg, "Distance: %d cm, Line detection: %d %d %d %d %d\r\n", Distance, l1, l2, l3, l4, l5);
+	  //sprintf(msg, "Distance: %d\r\n", Distance);
+	  //HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+	  //sprintf(msg, "Left found: %d Right found: %d\r\n", lineTrackerLeft_Found, lineTrackerRight_Found);
+	  //HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+
+	  // Line tracker
+
+	  uint16_t lineL = 0;
+	  uint16_t lineR = 0;
+	  uint16_t distance = 0;
+	  uint16_t threshold = 1000;
+
+	  char buf[256];
+
+	  ADC_Select_CH14();
+	  HAL_ADC_Start(&hadc1);
+
+	  // Poll for conversion for the first channel
+	  if (HAL_ADC_PollForConversion(&hadc1, 1000) == HAL_OK)
+	  {
+		  lineL = HAL_ADC_GetValue(&hadc1);
+	  }
+
+	  ADC_Select_CH15();
+	  HAL_ADC_Start(&hadc1);
+
+	  // Poll for conversion for the second channel
+	  if (HAL_ADC_PollForConversion(&hadc1, 1000) == HAL_OK)
+	  {
+		  lineR = HAL_ADC_GetValue(&hadc1);
+	  }
+
+
+	  // Read UltraSonic
+
+	  HAL_GPIO_WritePin(TRIG_PORT, TRIG_PIN, GPIO_PIN_SET);  // pull the TRIG pin HIGH
+	  __HAL_TIM_SET_COUNTER(&htim1, 0);
+	  while (__HAL_TIM_GET_COUNTER (&htim1) < 10);  // wait for 10 us
+	  HAL_GPIO_WritePin(TRIG_PORT, TRIG_PIN, GPIO_PIN_RESET);  // pull the TRIG pin low
+
+	  pMillis = HAL_GetTick(); // used this to avoid infinite while loop  (for timeout)
+	  		// wait for the echo pin to go high
+	  while (!(HAL_GPIO_ReadPin (ECHO_PORT, ECHO_PIN)) && pMillis + 10 >  HAL_GetTick());
+	  Value1 = __HAL_TIM_GET_COUNTER (&htim1);
+
+	  pMillis = HAL_GetTick(); // used this to avoid infinite while loop (for timeout)
+	  // wait for the echo pin to go low
+	  while ((HAL_GPIO_ReadPin (ECHO_PORT, ECHO_PIN)) && pMillis + 50 > HAL_GetTick());
+	  Value2 = __HAL_TIM_GET_COUNTER (&htim1);
+
+	  distance = (Value2-Value1)* 0.034/2;
+	  osDelay(10);
+
+
+	  // Print
+
+	  sprintf(msg, "Light: %d %d | Distance: %d \r\n", lineL, lineR, distance);
 	  HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
-	  if (l2 == 0) {
-		  driveCar(100, 0, 1);
-	  }
-	  if (l4 == 0) {
-		  driveCar(0, 100, 1);
-	  }
-	  if ((l1 == 0 && l2 == 0 && l3 == 0 && l4 == 0 && l5 == 0) || Distance < 20) {
-		  status = 1;
-		  while ((l1 == 0 && l2 == 0 && l3 == 0 && l4 == 0 && l5 == 0 ) || Distance < 20) {
-			  driveCar(0, 0, 1);
+
+	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_SET);
+
+	  driveCar(100, 100, 1);
+
+	  // Logic
+	  if(distance < 20) {
+		  driveCar(0, 0, 1);
+		  while(1) {
+			  Tone(ExampleMelody[NoteIndex++], 250, 50);
+			  if (NoteIndex == 3) {
+			  	NoteIndex = 0;
+			  	noTone();
+			  	osDelay(1000);
+			  	break;
+			  }
+			  noTone();
 		  }
-		  status = 0;
-		  osDelay(1000);
+
+		  for (int i = 0; i < 4; i++) {
+			  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_13);
+			  osDelay(500);
+		  }
 	  }
+	  else {
+		  driveCar(100, 100, 1);
+	  }
+//	  else {
+//		  // Logic to control car based on line sensor readings
+//		  if (lineL < threshold && lineR < threshold) {
+//		      // Both sensors are off the line (white surface), stop or search for the line
+//			  driveCar(0, 0, 1); // Stop
+//		  }
+//		  else if (lineL > threshold && lineR < threshold) {
+//		      // Left sensor on line, right sensor off line, turn left
+//		      driveCar(90, 50, 1); // Turn left with reduced speed on the left motor
+//		  }
+//		  else if (lineL < threshold && lineR > threshold) {
+//		      // Right sensor on line, left sensor off line, turn right
+//		      driveCar(50, 90, 1); // Turn right with reduced speed on the right motor
+//		  }
+//		  else {
+//		     // Both sensors are on the line (black surface), move straight
+//		      driveCar(90, 90, 1); // Move forward
+//		  }
+//	  }
+
+
+
+	    //HAL_Delay(50);  // Add some delay between readings
+
+//	  if(Distance < 20) {
+//
+//
+//
+//
+//		  		    HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_13);
+//		  		    		      osDelay(1000);
+//		  		    		    HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_13);
+//		  		    		    		      osDelay(1000);
+//		  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_SET);
+//	  }
+//	  else {
+//		  driveCar(100, 100, 1);
+//	  }
+
+//	  char msg[256];
+//	  sprintf(msg, "Left found: %d Right found: %d\r\n", lineTrackerLeft_Found, lineTrackerRight_Found);
+//	  HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+//
+
+
 	  osDelay(50);
+
   }
   /* USER CODE END 5 */
 }
@@ -716,6 +968,9 @@ void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
   /* User can add his own implementation to report the HAL error return state */
+	sprintf(msg, "Error Error");
+	HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 1000);
+
   __disable_irq();
   while (1)
   {
